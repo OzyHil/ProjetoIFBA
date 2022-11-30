@@ -13,12 +13,16 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFormattedTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
+
 public class Tela extends javax.swing.JFrame {
 
-    public Tela() {
+String Username = null, Password = null, senha = null , usuario = null;   
+
+public Tela() {
         initComponents();
         TelaDocente.setVisible(false);
         TelaEstudante.setVisible(false);
@@ -66,7 +70,6 @@ public class Tela extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         CadastroCursoBarra = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        CaixaDeTextoCadastroDataNasc = new javax.swing.JTextField();
         CadastroAnoBarra = new javax.swing.JComboBox<>();
         BotaoProcurarImagem3x4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -75,7 +78,8 @@ public class Tela extends javax.swing.JFrame {
         BotaoProcurarDocumentacao = new javax.swing.JButton();
         EnderecoFoto = new javax.swing.JTextField();
         TabelaDocumentosAnexados = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        ListaDocumentos = new javax.swing.JTextPane();
+        CaixaDeTextoCadastroDataNasc = new javax.swing.JFormattedTextField();
         MiniTelaTurmas = new javax.swing.JPanel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -414,7 +418,13 @@ public class Tela extends javax.swing.JFrame {
 
         EnderecoFoto.setText(" ");
 
-        TabelaDocumentosAnexados.setViewportView(jTextPane1);
+        TabelaDocumentosAnexados.setViewportView(ListaDocumentos);
+
+        try {
+            CaixaDeTextoCadastroDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout MiniTelaCadastrarAlunoLayout = new javax.swing.GroupLayout(MiniTelaCadastrarAluno);
         MiniTelaCadastrarAluno.setLayout(MiniTelaCadastrarAlunoLayout);
@@ -425,8 +435,6 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CaixaDeTextoCadastroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel11)
-                    .addComponent(CaixaDeTextoCadastroDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12)
                     .addComponent(CadastroAnoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
@@ -434,28 +442,28 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(CaixaDeTextoCadastroUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
-                    .addComponent(CaixaDeTextoCadastroSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CaixaDeTextoCadastroSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(CaixaDeTextoCadastroDataNasc, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MiniTelaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(Moldura3x4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                        .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
-                                .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(BotaoProcurarImagem3x4)
-                                    .addComponent(EnderecoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(55, 55, 55))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
-                                .addComponent(BotaoConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
-                                .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(TabelaDocumentosAnexados, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BotaoProcurarDocumentacao))
-                                .addGap(42, 42, 42))))))
+                        .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BotaoProcurarImagem3x4)
+                            .addComponent(EnderecoFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
+                        .addComponent(BotaoConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
+                        .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TabelaDocumentosAnexados, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotaoProcurarDocumentacao))
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaCadastrarAlunoLayout.createSequentialGroup()
+                        .addComponent(Moldura3x4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99))))
         );
         MiniTelaCadastrarAlunoLayout.setVerticalGroup(
             MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,7 +471,7 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MiniTelaCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(MiniTelaCadastrarAlunoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 40, Short.MAX_VALUE)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CaixaDeTextoCadastroNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1053,10 +1061,11 @@ public class Tela extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        String Username = loginUsuario.getText();
-        String Password = loginSenha.getText();    
+        Username = loginUsuario.getText();
+        Password = loginSenha.getText();    
         
-        if(Username.contains("abc") && Password.contains("123")){//Procurar na lista de Estudantes/Aluno
+        if((Username.contains("abc")|| Username.equals(usuario)) 
+            && (Password.contains("123") || Password.equals(senha))){
         loginUsuario.setText(null);
         loginSenha.setText(null);
         TelaLogin.setVisible(false);
@@ -1141,25 +1150,29 @@ LimparMiniTela();
 
     private void BotaoProcurarDocumentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarDocumentacaoActionPerformed
         JFileChooser arquivo = new JFileChooser();
-        int op =arquivo.showOpenDialog(this);
+        int op = arquivo.showOpenDialog(this);
         if(op == JFileChooser.APPROVE_OPTION){
             File file = new File("");
             file = arquivo.getSelectedFile();
             String nomedoarquivo = file.getName();
-         //TabelaDocumentosAnexados; colocar os documentos por nome na tabela
+         ListaDocumentos.setText(nomedoarquivo);
+
     }//GEN-LAST:event_BotaoProcurarDocumentacaoActionPerformed
     }
+    
     private void BotaoConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroActionPerformed
-        // TODO add your handling code here:
+        String nome = CaixaDeTextoCadastroNome.getText();
+                String data = CaixaDeTextoCadastroDataNasc.getText();
+                //CadastroAnoBarra
+                       // CadastroCursoBarra.get
+                         usuario = CaixaDeTextoCadastroUsuario.getText();
+                             senha = CaixaDeTextoCadastroSenha.getText();
+                            Icon foto = Foto3x4.getIcon();
     }//GEN-LAST:event_BotaoConcluirCadastroActionPerformed
 
     private void BotaoProcurarImagem3x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarImagem3x4ActionPerformed
         JFileChooser arquivofoto = new JFileChooser();
-
-        //FileNameExtensionFilter filto = new FileNameExtensionFilter("Apenas .png e .jpeg", "png", "jpeg");
-        //arquivofoto.setAcceptAllFileFilterUsed(false);
-        //arquivofoto.addChoosableFileFilter(filto);
-        int op =arquivofoto.showOpenDialog(this);
+        int op = arquivofoto.showOpenDialog(this);
         if(op == JFileChooser.APPROVE_OPTION){
             File file = new File("");
             file = arquivofoto.getSelectedFile();
@@ -1232,7 +1245,7 @@ public void MarcadorPressionado(){
     private javax.swing.JPanel BotaoTurmasApertado;
     private javax.swing.JComboBox<String> CadastroAnoBarra;
     private javax.swing.JComboBox<String> CadastroCursoBarra;
-    private javax.swing.JTextField CaixaDeTextoCadastroDataNasc;
+    private javax.swing.JFormattedTextField CaixaDeTextoCadastroDataNasc;
     private javax.swing.JTextField CaixaDeTextoCadastroNome;
     private javax.swing.JTextField CaixaDeTextoCadastroSenha;
     private javax.swing.JTextField CaixaDeTextoCadastroUsuario;
@@ -1241,6 +1254,7 @@ public void MarcadorPressionado(){
     private javax.swing.JLabel Foto3x4;
     private javax.swing.JLabel Imagem;
     private javax.swing.JLabel ImagemDeFundo;
+    private javax.swing.JTextPane ListaDocumentos;
     private javax.swing.JPanel MiniTelaBoletim;
     private javax.swing.JPanel MiniTelaCadastrarAluno;
     private javax.swing.JPanel MiniTelaDadosPessoais;
@@ -1303,7 +1317,6 @@ public void MarcadorPressionado(){
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextField loginSenha;
     private javax.swing.JTextField loginUsuario;
     // End of variables declaration//GEN-END:variables
