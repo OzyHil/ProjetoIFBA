@@ -56,9 +56,9 @@ public Tela() {
         TabelaDisciplinas = new javax.swing.JTable();
         BotaoTecEletro = new javax.swing.JRadioButton();
         BotaoTecInfo = new javax.swing.JRadioButton();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        AnoTurmaDisciplina = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        BotaoProcurarDisciplinas = new javax.swing.JButton();
         MiniTelaCadastrarAluno = new javax.swing.JPanel();
         Moldura3x4 = new javax.swing.JPanel();
         Foto3x4 = new javax.swing.JLabel();
@@ -316,14 +316,29 @@ public Tela() {
         TabelaDisc.setViewportView(TabelaDisciplinas);
 
         BotaoTecEletro.setText("Técnico em Eletromecânica");
+        BotaoTecEletro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoTecEletroMouseClicked(evt);
+            }
+        });
 
         BotaoTecInfo.setText("Técnico em Informatica");
+        BotaoTecInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoTecInfoMouseClicked(evt);
+            }
+        });
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1º Ano", "2º Ano", "3º Ano", "4º Ano" }));
+        AnoTurmaDisciplina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1º Ano", "2º Ano", "3º Ano", "4º Ano" }));
 
         jLabel13.setText("Ano");
 
-        jButton8.setText("Procurar");
+        BotaoProcurarDisciplinas.setText("Procurar");
+        BotaoProcurarDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoProcurarDisciplinasMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MiniTelaDisciplinasLayout = new javax.swing.GroupLayout(MiniTelaDisciplinas);
         MiniTelaDisciplinas.setLayout(MiniTelaDisciplinasLayout);
@@ -337,14 +352,14 @@ public Tela() {
                         .addGap(18, 18, 18)
                         .addGroup(MiniTelaDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MiniTelaDisciplinasLayout.createSequentialGroup()
-                                .addComponent(jButton8)
+                                .addComponent(BotaoProcurarDisciplinas)
                                 .addGap(40, 40, 40))
                             .addGroup(MiniTelaDisciplinasLayout.createSequentialGroup()
                                 .addComponent(BotaoTecInfo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(AnoTurmaDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
@@ -355,10 +370,10 @@ public Tela() {
                 .addGroup(MiniTelaDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoTecEletro)
                     .addComponent(BotaoTecInfo)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AnoTurmaDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
                 .addGap(14, 14, 14)
-                .addComponent(jButton8)
+                .addComponent(BotaoProcurarDisciplinas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
@@ -1108,23 +1123,27 @@ public Tela() {
     private void ClickNoBotaoTurmasApertado(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoTurmasApertado
        LimparMiniTela();
         MiniTelaTurmas.setVisible(true);
+        LimparabelaDisciplinas();
     }//GEN-LAST:event_ClickNoBotaoTurmasApertado
 
     private void ClickBotaoCadastrarAlunoApertado(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoCadastrarAlunoApertado
        LimparMiniTela(); 
 MiniTelaCadastrarAluno.setVisible(true);
+LimparabelaDisciplinas();
 
     }//GEN-LAST:event_ClickBotaoCadastrarAlunoApertado
 
     private void ClickBotaoDisciplinas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoDisciplinas
        LimparMiniTela();
+       LimparabelaDisciplinas();
 MiniTelaDisciplinas.setVisible(true);// TODO add your handling code here:
-PreencherTabelaDisciplinas();
+
     }//GEN-LAST:event_ClickBotaoDisciplinas
 
     private void ClickBotaoDocentesApertado(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoDocentesApertado
 LimparMiniTela();
-        MiniTelaDocentes.setVisible(true);        // TODO add your handling code here:
+LimparabelaDisciplinas();
+        MiniTelaDocentes.setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoDocentesApertado
 
     private void ClickNoBotaoBoletim(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoBoletim
@@ -1136,6 +1155,7 @@ LimparMiniTela();
     private void ClickBotaoDadosPessoais(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoDadosPessoais
         LimparMiniTela();
         MiniTelaDadosPessoais.setVisible(true);
+        
 
     }//GEN-LAST:event_ClickBotaoDadosPessoais
 
@@ -1146,6 +1166,7 @@ LimparMiniTela();
     private void BotaoSair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSair1ActionPerformed
         TelaEstudante.setVisible(false);
         TelaLogin.setVisible(true);// TODO add your handling code here:
+        LimparabelaDisciplinas();
     }//GEN-LAST:event_BotaoSair1ActionPerformed
 
     private void BotaoProcurarDocumentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarDocumentacaoActionPerformed
@@ -1184,13 +1205,51 @@ LimparMiniTela();
 
         }
     }//GEN-LAST:event_BotaoProcurarImagem3x4ActionPerformed
+
+    private void BotaoProcurarDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoProcurarDisciplinasMouseClicked
+     DefaultTableModel dtmDisciplinas = (DefaultTableModel) TabelaDisciplinas.getModel();
+       
+     if(((DefaultTableModel) TabelaDisciplinas.getModel()).getRowCount()>0){
+           for (int i = 0; i < TabelaDisciplinas.getRowCount(); i++) {
+            ((DefaultTableModel) TabelaDisciplinas.getModel()).removeRow(i);  
+           }          
+       } 
+
+     
+       
+  if(BotaoTecEletro.isSelected()){ 
+    //usar o comando this. para cada atributo de disciplina(qtd de alunos, caga horaria,etc.)
+    if(AnoTurmaDisciplina.getSelectedItem() == "2º Ano"){
+    dtmDisciplinas.addRow(new String []{"Geografia", "12" , "2" , "4 horas" });
+    dtmDisciplinas.addRow(new String []{"Matemática", "18" , "4" , "5 horas" }); 
+    }//GEN-LAST:event_BotaoProcurarDisciplinasMouseClicked
+    }
+  if(BotaoTecInfo.isSelected()){
+    if(AnoTurmaDisciplina.getSelectedItem() == "3º Ano"){
+    dtmDisciplinas.addRow(new String []{"Inglês", "25" , "1" , "2 horas" });
+    dtmDisciplinas.addRow(new String []{"Filosofia", "15" , "3" , "1 horas" }); 
+    }                               
+  } 
+    }
+    private void BotaoTecEletroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoTecEletroMouseClicked
+      BotaoTecInfo.setSelected(false);
+    }//GEN-LAST:event_BotaoTecEletroMouseClicked
+
+    private void BotaoTecInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoTecInfoMouseClicked
+      BotaoTecEletro.setSelected(false);  
+    }//GEN-LAST:event_BotaoTecInfoMouseClicked
+ 
     
-    public void PreencherTabelaDisciplinas(){
-  
-    DefaultTableModel dtmDisciplinas = (DefaultTableModel) TabelaDisciplinas.getModel();
-    String j = "Geografia", n = "12",  m= "2", k=  "4 horas";
-    Object dados [] = {j, n , m , k };//usar o comando this. para cada atributo de disciplina(qtd de alunos, caga horaria,etc.)
-    dtmDisciplinas.addRow(dados);  
+    public void LimparabelaDisciplinas(){
+   BotaoTecEletro.setSelected(false);
+   BotaoTecInfo.setSelected(false);     
+        if(((DefaultTableModel) TabelaDisciplinas.getModel()).getRowCount()>0){
+           for (int i = 0; i < TabelaDisciplinas.getRowCount(); i++) {
+            ((DefaultTableModel) TabelaDisciplinas.getModel()).removeRow(i);  
+           }
+              
+       }
+
 }
 public void MarcadorPressionado(){
    /*if(BotaoTecEletro.getSelectedIcon()){
@@ -1230,12 +1289,14 @@ public void MarcadorPressionado(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> AnoTurmaDisciplina;
     private javax.swing.JPanel BotaoBoletim;
     private javax.swing.JPanel BotaoCadastrarAlunoApertado;
     private javax.swing.JButton BotaoConcluirCadastro;
     private javax.swing.JPanel BotaoDadosPessoais;
     private javax.swing.JPanel BotaoDisciplinasApertado;
     private javax.swing.JPanel BotaoDocentesApertado;
+    private javax.swing.JButton BotaoProcurarDisciplinas;
     private javax.swing.JButton BotaoProcurarDocumentacao;
     private javax.swing.JButton BotaoProcurarImagem3x4;
     private javax.swing.JButton BotaoSair;
@@ -1276,12 +1337,10 @@ public void MarcadorPressionado(){
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel10;
