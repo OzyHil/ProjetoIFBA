@@ -19,21 +19,21 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 public class Tela extends javax.swing.JFrame {
-    
+
     String Username = null, Password = null, senha = null, usuario = null, endereco = null, nomesdealunos = null, nomesdedisciplinas = null, nomesDeDocentes = null;
     ImageIcon imagem = null;
     int x = 210;
     String[] nomesAlunos = new String[100];
-    String[] nomesDisciplinas = new String[100];    
-String[] nomesDocentes = new String[100];
-  
-public Tela() {
+    String[] nomesDisciplinas = new String[100];
+    String[] nomesDocentes = new String[100];
+
+    public Tela() {
         initComponents();
         TelaDocente.setVisible(false);
         TelaEstudante.setVisible(false);
-        
+
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -52,6 +52,7 @@ public Tela() {
         jPanel3 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         DeslizarMenu = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
         PainelMenu = new javax.swing.JPanel();
         BotaoMenuCadastro = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
@@ -63,6 +64,16 @@ public Tela() {
         BotaoMenuRelatorio = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         PainelSubmenu = new javax.swing.JPanel();
+        SubmenuRemocao = new javax.swing.JPanel();
+        BotaoRemoverAluno = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        BotaoRemoverDisciplinas = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        BotaoRemoverDocentes = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        BotaoRemoverTurmas = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        SubmenuCadastro = new javax.swing.JPanel();
         BotaoCadastrarTurmas = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -72,8 +83,8 @@ public Tela() {
         jLabel4 = new javax.swing.JLabel();
         BotaoCadastrarDisciplinas = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        SubmenuEdicao = new javax.swing.JPanel();
         BotaoEditarTurmas = new javax.swing.JPanel();
-        jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         BotaoEditarDocentes = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
@@ -81,17 +92,8 @@ public Tela() {
         jLabel38 = new javax.swing.JLabel();
         BotaoEditarDisciplinas = new javax.swing.JPanel();
         jLabel39 = new javax.swing.JLabel();
-        BotaoRemoverTurmas = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        BotaoRemoverAluno = new javax.swing.JPanel();
-        jLabel42 = new javax.swing.JLabel();
-        BotaoRemoverDisciplinas = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
-        BotaoRemoverDocentes = new javax.swing.JPanel();
-        jLabel44 = new javax.swing.JLabel();
+        SubmenuRelatorio = new javax.swing.JPanel();
         BotaoRelatorioTurmas = new javax.swing.JPanel();
-        jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         BotaoRelatorioDocentes = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
@@ -105,7 +107,7 @@ public Tela() {
         CaixaDeTextoDisciplina = new javax.swing.JTextField();
         BotaoConcluirCadastroDisciplinas = new javax.swing.JButton();
         ListaDeAlunos = new javax.swing.JScrollPane();
-        listadealunos = new javax.swing.JList<>();
+        ListaAlunosCadastrarDisciplinas = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         listadeprofessores = new javax.swing.JList<>();
         jLabel23 = new javax.swing.JLabel();
@@ -152,32 +154,91 @@ public Tela() {
         jLabel10 = new javax.swing.JLabel();
         CaixaDeTextoCadastroTurma = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        ListaDisciplinas = new javax.swing.JList<>();
+        ListaAlunosCadastrarTurma = new javax.swing.JList<>();
         jLabel12 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
+        EditarDisciplina = new javax.swing.JPanel();
+        TabelaDisc1 = new javax.swing.JScrollPane();
+        TabelaEditarDisciplinas = new javax.swing.JTable();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jLabel54 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel56 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        EditarAluno = new javax.swing.JPanel();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel61 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        EditarDocente = new javax.swing.JPanel();
+        jComboBox11 = new javax.swing.JComboBox<>();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel64 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        EditarTurma = new javax.swing.JPanel();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jLabel55 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        RemoverDisciplina = new javax.swing.JPanel();
+        TabelaDisc2 = new javax.swing.JScrollPane();
+        TabelaEditarDisciplinas1 = new javax.swing.JTable();
+        jButton11 = new javax.swing.JButton();
+        jLabel80 = new javax.swing.JLabel();
+        RemoverAluno = new javax.swing.JPanel();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jLabel67 = new javax.swing.JLabel();
+        jLabel68 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel69 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        RemoverDocente = new javax.swing.JPanel();
+        jComboBox13 = new javax.swing.JComboBox<>();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
-        DisciplinasBusca = new javax.swing.JPanel();
+        RemoverTurma = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel74 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        RelatorioDisciplina = new javax.swing.JPanel();
         TabelaDisc = new javax.swing.JScrollPane();
         TabelaDisciplinas = new javax.swing.JTable();
-        BotaoTecEletro = new javax.swing.JRadioButton();
-        BotaoTecInfo = new javax.swing.JRadioButton();
-        AnoTurmaDisciplina = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jLabel52 = new javax.swing.JLabel();
+        RelatorioAluno = new javax.swing.JPanel();
+        TabelaDoc2 = new javax.swing.JScrollPane();
+        TabelaDocentes2 = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        BotaoProcurarDisciplinas = new javax.swing.JButton();
-        MiniTelaDocentes = new javax.swing.JPanel();
+        RelatorioDocente = new javax.swing.JPanel();
         TabelaDoc = new javax.swing.JScrollPane();
         TabelaDocentes = new javax.swing.JTable();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jTextField5 = new javax.swing.JTextField();
-        jButton10 = new javax.swing.JButton();
+        RelatorioTurma = new javax.swing.JPanel();
+        TabelaDoc1 = new javax.swing.JScrollPane();
+        TabelaDocentes1 = new javax.swing.JTable();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jLabel51 = new javax.swing.JLabel();
         BotaoSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         TelaEstudante = new javax.swing.JPanel();
@@ -351,6 +412,15 @@ public Tela() {
         jPanel7.add(DeslizarMenu);
         DeslizarMenu.setBounds(0, 0, 30, 30);
 
+        jLabel50.setText("&");
+        jLabel50.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel50MouseClicked(evt);
+            }
+        });
+        jPanel7.add(jLabel50);
+        jLabel50.setBounds(0, 36, 30, 30);
+
         TelaDocente.add(jPanel7);
         jPanel7.setBounds(0, 70, 30, 530);
 
@@ -441,6 +511,11 @@ public Tela() {
         BotaoMenuRemover.setBounds(0, 100, 180, 50);
 
         BotaoMenuRelatorio.setPreferredSize(new java.awt.Dimension(0, 50));
+        BotaoMenuRelatorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoMenuRelatorioMouseClicked(evt);
+            }
+        });
 
         jLabel29.setBackground(new java.awt.Color(105, 160, 115));
         jLabel29.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
@@ -474,267 +549,7 @@ public Tela() {
 
         PainelSubmenu.setLayout(null);
 
-        BotaoCadastrarTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
-        BotaoCadastrarTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickNoBotaoCadastrarTurmas(evt);
-            }
-        });
-        BotaoCadastrarTurmas.setLayout(null);
-
-        jLabel18.setBackground(new java.awt.Color(255, 102, 204));
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icons8-magazine-23.png"))); // NOI18N
-        BotaoCadastrarTurmas.add(jLabel18);
-        jLabel18.setBounds(20, 0, 30, 50);
-
-        jLabel3.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("             Turmas");
-        jLabel3.setOpaque(true);
-        BotaoCadastrarTurmas.add(jLabel3);
-        jLabel3.setBounds(0, 0, 180, 50);
-
-        PainelSubmenu.add(BotaoCadastrarTurmas);
-        BotaoCadastrarTurmas.setBounds(0, 0, 180, 50);
-
-        BotaoCadastrarDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickBotaoCadastrarDocentes(evt);
-            }
-        });
-
-        jLabel5.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("             Docentes");
-        jLabel5.setMaximumSize(new java.awt.Dimension(77, 19));
-        jLabel5.setMinimumSize(new java.awt.Dimension(77, 19));
-        jLabel5.setOpaque(true);
-
-        javax.swing.GroupLayout BotaoCadastrarDocentesLayout = new javax.swing.GroupLayout(BotaoCadastrarDocentes);
-        BotaoCadastrarDocentes.setLayout(BotaoCadastrarDocentesLayout);
-        BotaoCadastrarDocentesLayout.setHorizontalGroup(
-            BotaoCadastrarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        BotaoCadastrarDocentesLayout.setVerticalGroup(
-            BotaoCadastrarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotaoCadastrarDocentesLayout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        PainelSubmenu.add(BotaoCadastrarDocentes);
-        BotaoCadastrarDocentes.setBounds(0, 50, 180, 50);
-
-        BotaoCadastrarAluno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickBotaoCadastrarAluno(evt);
-            }
-        });
-
-        jLabel4.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("             Alunos");
-        jLabel4.setMaximumSize(new java.awt.Dimension(77, 19));
-        jLabel4.setMinimumSize(new java.awt.Dimension(77, 19));
-        jLabel4.setOpaque(true);
-
-        javax.swing.GroupLayout BotaoCadastrarAlunoLayout = new javax.swing.GroupLayout(BotaoCadastrarAluno);
-        BotaoCadastrarAluno.setLayout(BotaoCadastrarAlunoLayout);
-        BotaoCadastrarAlunoLayout.setHorizontalGroup(
-            BotaoCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        BotaoCadastrarAlunoLayout.setVerticalGroup(
-            BotaoCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoCadastrarAlunoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jLabel4.getAccessibleContext().setAccessibleName("       Alunos");
-
-        PainelSubmenu.add(BotaoCadastrarAluno);
-        BotaoCadastrarAluno.setBounds(0, 100, 180, 50);
-
-        BotaoCadastrarDisciplinas.setPreferredSize(new java.awt.Dimension(0, 50));
-        BotaoCadastrarDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotaoCadastrarDisciplinasMouseClicked(evt);
-            }
-        });
-
-        jLabel6.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("             Disciplinas ");
-        jLabel6.setOpaque(true);
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickBotaoDisciplinas(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BotaoCadastrarDisciplinasLayout = new javax.swing.GroupLayout(BotaoCadastrarDisciplinas);
-        BotaoCadastrarDisciplinas.setLayout(BotaoCadastrarDisciplinasLayout);
-        BotaoCadastrarDisciplinasLayout.setHorizontalGroup(
-            BotaoCadastrarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        BotaoCadastrarDisciplinasLayout.setVerticalGroup(
-            BotaoCadastrarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoCadastrarDisciplinasLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        PainelSubmenu.add(BotaoCadastrarDisciplinas);
-        BotaoCadastrarDisciplinas.setBounds(0, 150, 180, 50);
-
-        BotaoEditarTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
-        BotaoEditarTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickNoBotaoEditarTurmas(evt);
-            }
-        });
-        BotaoEditarTurmas.setLayout(null);
-
-        jLabel35.setBackground(new java.awt.Color(255, 102, 204));
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icons8-magazine-23.png"))); // NOI18N
-        BotaoEditarTurmas.add(jLabel35);
-        jLabel35.setBounds(20, 0, 30, 50);
-
-        jLabel36.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel36.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel36.setText("             Turmas");
-        jLabel36.setOpaque(true);
-        BotaoEditarTurmas.add(jLabel36);
-        jLabel36.setBounds(0, 0, 180, 50);
-
-        PainelSubmenu.add(BotaoEditarTurmas);
-        BotaoEditarTurmas.setBounds(0, 0, 180, 50);
-
-        BotaoEditarDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickBotaoEditarDocentes(evt);
-            }
-        });
-
-        jLabel37.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel37.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel37.setText("             Docentes");
-        jLabel37.setMaximumSize(new java.awt.Dimension(77, 19));
-        jLabel37.setMinimumSize(new java.awt.Dimension(77, 19));
-        jLabel37.setOpaque(true);
-
-        javax.swing.GroupLayout BotaoEditarDocentesLayout = new javax.swing.GroupLayout(BotaoEditarDocentes);
-        BotaoEditarDocentes.setLayout(BotaoEditarDocentesLayout);
-        BotaoEditarDocentesLayout.setHorizontalGroup(
-            BotaoEditarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        BotaoEditarDocentesLayout.setVerticalGroup(
-            BotaoEditarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotaoEditarDocentesLayout.createSequentialGroup()
-                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        PainelSubmenu.add(BotaoEditarDocentes);
-        BotaoEditarDocentes.setBounds(0, 50, 180, 50);
-
-        BotaoEditarAluno.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickBotaoEditarAluno(evt);
-            }
-        });
-
-        jLabel38.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel38.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel38.setText("             Alunos");
-        jLabel38.setMaximumSize(new java.awt.Dimension(77, 19));
-        jLabel38.setMinimumSize(new java.awt.Dimension(77, 19));
-        jLabel38.setOpaque(true);
-
-        javax.swing.GroupLayout BotaoEditarAlunoLayout = new javax.swing.GroupLayout(BotaoEditarAluno);
-        BotaoEditarAluno.setLayout(BotaoEditarAlunoLayout);
-        BotaoEditarAlunoLayout.setHorizontalGroup(
-            BotaoEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        BotaoEditarAlunoLayout.setVerticalGroup(
-            BotaoEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoEditarAlunoLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        PainelSubmenu.add(BotaoEditarAluno);
-        BotaoEditarAluno.setBounds(0, 100, 180, 50);
-
-        BotaoEditarDisciplinas.setPreferredSize(new java.awt.Dimension(0, 50));
-        BotaoEditarDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotaoEditarDisciplinasMouseClicked(evt);
-            }
-        });
-
-        jLabel39.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel39.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel39.setText("             Disciplinas ");
-        jLabel39.setOpaque(true);
-        jLabel39.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel39ClickBotaoDisciplinas(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BotaoEditarDisciplinasLayout = new javax.swing.GroupLayout(BotaoEditarDisciplinas);
-        BotaoEditarDisciplinas.setLayout(BotaoEditarDisciplinasLayout);
-        BotaoEditarDisciplinasLayout.setHorizontalGroup(
-            BotaoEditarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        BotaoEditarDisciplinasLayout.setVerticalGroup(
-            BotaoEditarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoEditarDisciplinasLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        PainelSubmenu.add(BotaoEditarDisciplinas);
-        BotaoEditarDisciplinas.setBounds(0, 150, 180, 50);
-
-        BotaoRemoverTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
-        BotaoRemoverTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ClickNoBotaoRemoverTurmas(evt);
-            }
-        });
-        BotaoRemoverTurmas.setLayout(null);
-
-        jLabel40.setBackground(new java.awt.Color(255, 102, 204));
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icons8-magazine-23.png"))); // NOI18N
-        BotaoRemoverTurmas.add(jLabel40);
-        jLabel40.setBounds(20, 0, 30, 50);
-
-        jLabel41.setBackground(new java.awt.Color(105, 160, 115));
-        jLabel41.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel41.setText("             Turmas");
-        jLabel41.setOpaque(true);
-        BotaoRemoverTurmas.add(jLabel41);
-        jLabel41.setBounds(0, 0, 180, 50);
-
-        PainelSubmenu.add(BotaoRemoverTurmas);
-        BotaoRemoverTurmas.setBounds(0, 0, 180, 50);
+        SubmenuRemocao.setLayout(null);
 
         BotaoRemoverAluno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -745,7 +560,7 @@ public Tela() {
         jLabel42.setBackground(new java.awt.Color(105, 160, 115));
         jLabel42.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel42.setText("             Alunos");
+        jLabel42.setText("          Remover Alunos");
         jLabel42.setMaximumSize(new java.awt.Dimension(77, 19));
         jLabel42.setMinimumSize(new java.awt.Dimension(77, 19));
         jLabel42.setOpaque(true);
@@ -763,8 +578,8 @@ public Tela() {
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PainelSubmenu.add(BotaoRemoverAluno);
-        BotaoRemoverAluno.setBounds(0, 100, 180, 0);
+        SubmenuRemocao.add(BotaoRemoverAluno);
+        BotaoRemoverAluno.setBounds(0, 100, 180, 50);
 
         BotaoRemoverDisciplinas.setPreferredSize(new java.awt.Dimension(0, 50));
         BotaoRemoverDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -776,7 +591,7 @@ public Tela() {
         jLabel43.setBackground(new java.awt.Color(105, 160, 115));
         jLabel43.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel43.setText("             Disciplinas ");
+        jLabel43.setText("          Remover Disciplina");
         jLabel43.setOpaque(true);
         jLabel43.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -797,7 +612,7 @@ public Tela() {
                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PainelSubmenu.add(BotaoRemoverDisciplinas);
+        SubmenuRemocao.add(BotaoRemoverDisciplinas);
         BotaoRemoverDisciplinas.setBounds(0, 150, 180, 50);
 
         BotaoRemoverDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -809,7 +624,7 @@ public Tela() {
         jLabel44.setBackground(new java.awt.Color(105, 160, 115));
         jLabel44.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel44.setText("             Docentes");
+        jLabel44.setText("          Remover Docentes");
         jLabel44.setMaximumSize(new java.awt.Dimension(77, 19));
         jLabel44.setMinimumSize(new java.awt.Dimension(77, 19));
         jLabel44.setOpaque(true);
@@ -827,8 +642,276 @@ public Tela() {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        PainelSubmenu.add(BotaoRemoverDocentes);
-        BotaoRemoverDocentes.setBounds(0, 50, 180, 0);
+        SubmenuRemocao.add(BotaoRemoverDocentes);
+        BotaoRemoverDocentes.setBounds(0, 50, 180, 50);
+
+        BotaoRemoverTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
+        BotaoRemoverTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickNoBotaoRemoverTurmas(evt);
+            }
+        });
+        BotaoRemoverTurmas.setLayout(null);
+
+        jLabel41.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel41.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("          Remover Turmas");
+        jLabel41.setOpaque(true);
+        BotaoRemoverTurmas.add(jLabel41);
+        jLabel41.setBounds(0, 0, 180, 50);
+
+        SubmenuRemocao.add(BotaoRemoverTurmas);
+        BotaoRemoverTurmas.setBounds(0, 0, 180, 50);
+
+        PainelSubmenu.add(SubmenuRemocao);
+        SubmenuRemocao.setBounds(0, 0, 180, 200);
+
+        SubmenuCadastro.setLayout(null);
+
+        BotaoCadastrarTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
+        BotaoCadastrarTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickNoBotaoCadastrarTurmas(evt);
+            }
+        });
+        BotaoCadastrarTurmas.setLayout(null);
+
+        jLabel18.setBackground(new java.awt.Color(255, 102, 204));
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icons8-magazine-23.png"))); // NOI18N
+        BotaoCadastrarTurmas.add(jLabel18);
+        jLabel18.setBounds(10, 0, 30, 50);
+
+        jLabel3.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("          Cadastrar Turmas");
+        jLabel3.setOpaque(true);
+        BotaoCadastrarTurmas.add(jLabel3);
+        jLabel3.setBounds(0, 0, 180, 50);
+
+        SubmenuCadastro.add(BotaoCadastrarTurmas);
+        BotaoCadastrarTurmas.setBounds(0, 0, 180, 50);
+
+        BotaoCadastrarDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickBotaoCadastrarDocentes(evt);
+            }
+        });
+
+        jLabel5.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("          Cadastrar Docentes");
+        jLabel5.setMaximumSize(new java.awt.Dimension(77, 19));
+        jLabel5.setMinimumSize(new java.awt.Dimension(77, 19));
+        jLabel5.setOpaque(true);
+
+        javax.swing.GroupLayout BotaoCadastrarDocentesLayout = new javax.swing.GroupLayout(BotaoCadastrarDocentes);
+        BotaoCadastrarDocentes.setLayout(BotaoCadastrarDocentesLayout);
+        BotaoCadastrarDocentesLayout.setHorizontalGroup(
+            BotaoCadastrarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        BotaoCadastrarDocentesLayout.setVerticalGroup(
+            BotaoCadastrarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BotaoCadastrarDocentesLayout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        SubmenuCadastro.add(BotaoCadastrarDocentes);
+        BotaoCadastrarDocentes.setBounds(0, 50, 180, 50);
+
+        BotaoCadastrarAluno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickBotaoCadastrarAluno(evt);
+            }
+        });
+
+        jLabel4.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("          Cadastrar Alunos");
+        jLabel4.setMaximumSize(new java.awt.Dimension(77, 19));
+        jLabel4.setMinimumSize(new java.awt.Dimension(77, 19));
+        jLabel4.setOpaque(true);
+
+        javax.swing.GroupLayout BotaoCadastrarAlunoLayout = new javax.swing.GroupLayout(BotaoCadastrarAluno);
+        BotaoCadastrarAluno.setLayout(BotaoCadastrarAlunoLayout);
+        BotaoCadastrarAlunoLayout.setHorizontalGroup(
+            BotaoCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        BotaoCadastrarAlunoLayout.setVerticalGroup(
+            BotaoCadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoCadastrarAlunoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jLabel4.getAccessibleContext().setAccessibleName("       Alunos");
+
+        SubmenuCadastro.add(BotaoCadastrarAluno);
+        BotaoCadastrarAluno.setBounds(0, 100, 180, 50);
+
+        BotaoCadastrarDisciplinas.setPreferredSize(new java.awt.Dimension(0, 50));
+        BotaoCadastrarDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoCadastrarDisciplinasMouseClicked(evt);
+            }
+        });
+
+        jLabel6.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("          Cadastrar Disciplinas ");
+        jLabel6.setOpaque(true);
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickBotaoDisciplinas(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BotaoCadastrarDisciplinasLayout = new javax.swing.GroupLayout(BotaoCadastrarDisciplinas);
+        BotaoCadastrarDisciplinas.setLayout(BotaoCadastrarDisciplinasLayout);
+        BotaoCadastrarDisciplinasLayout.setHorizontalGroup(
+            BotaoCadastrarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        BotaoCadastrarDisciplinasLayout.setVerticalGroup(
+            BotaoCadastrarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoCadastrarDisciplinasLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        SubmenuCadastro.add(BotaoCadastrarDisciplinas);
+        BotaoCadastrarDisciplinas.setBounds(0, 150, 180, 50);
+
+        PainelSubmenu.add(SubmenuCadastro);
+        SubmenuCadastro.setBounds(0, 0, 180, 200);
+
+        SubmenuEdicao.setLayout(null);
+
+        BotaoEditarTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
+        BotaoEditarTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickNoBotaoEditarTurmas(evt);
+            }
+        });
+        BotaoEditarTurmas.setLayout(null);
+
+        jLabel36.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel36.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("           Editar Turmas");
+        jLabel36.setOpaque(true);
+        BotaoEditarTurmas.add(jLabel36);
+        jLabel36.setBounds(0, 0, 180, 50);
+        jLabel36.getAccessibleContext().setAccessibleName("          Editar Turmas");
+
+        SubmenuEdicao.add(BotaoEditarTurmas);
+        BotaoEditarTurmas.setBounds(0, 0, 180, 50);
+
+        BotaoEditarDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickBotaoEditarDocentes(evt);
+            }
+        });
+
+        jLabel37.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel37.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("          Editar  Docentes");
+        jLabel37.setMaximumSize(new java.awt.Dimension(77, 19));
+        jLabel37.setMinimumSize(new java.awt.Dimension(77, 19));
+        jLabel37.setOpaque(true);
+
+        javax.swing.GroupLayout BotaoEditarDocentesLayout = new javax.swing.GroupLayout(BotaoEditarDocentes);
+        BotaoEditarDocentes.setLayout(BotaoEditarDocentesLayout);
+        BotaoEditarDocentesLayout.setHorizontalGroup(
+            BotaoEditarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        BotaoEditarDocentesLayout.setVerticalGroup(
+            BotaoEditarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BotaoEditarDocentesLayout.createSequentialGroup()
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        SubmenuEdicao.add(BotaoEditarDocentes);
+        BotaoEditarDocentes.setBounds(0, 50, 180, 50);
+
+        BotaoEditarAluno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClickBotaoEditarAluno(evt);
+            }
+        });
+
+        jLabel38.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel38.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("           Editar Alunos");
+        jLabel38.setMaximumSize(new java.awt.Dimension(77, 19));
+        jLabel38.setMinimumSize(new java.awt.Dimension(77, 19));
+        jLabel38.setOpaque(true);
+
+        javax.swing.GroupLayout BotaoEditarAlunoLayout = new javax.swing.GroupLayout(BotaoEditarAluno);
+        BotaoEditarAluno.setLayout(BotaoEditarAlunoLayout);
+        BotaoEditarAlunoLayout.setHorizontalGroup(
+            BotaoEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        BotaoEditarAlunoLayout.setVerticalGroup(
+            BotaoEditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoEditarAlunoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        SubmenuEdicao.add(BotaoEditarAluno);
+        BotaoEditarAluno.setBounds(0, 100, 180, 50);
+
+        BotaoEditarDisciplinas.setPreferredSize(new java.awt.Dimension(0, 50));
+        BotaoEditarDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotaoEditarDisciplinasMouseClicked(evt);
+            }
+        });
+
+        jLabel39.setBackground(new java.awt.Color(105, 160, 115));
+        jLabel39.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("           Editar Disciplinas ");
+        jLabel39.setOpaque(true);
+        jLabel39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel39ClickBotaoDisciplinas(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BotaoEditarDisciplinasLayout = new javax.swing.GroupLayout(BotaoEditarDisciplinas);
+        BotaoEditarDisciplinas.setLayout(BotaoEditarDisciplinasLayout);
+        BotaoEditarDisciplinasLayout.setHorizontalGroup(
+            BotaoEditarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        BotaoEditarDisciplinasLayout.setVerticalGroup(
+            BotaoEditarDisciplinasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotaoEditarDisciplinasLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        SubmenuEdicao.add(BotaoEditarDisciplinas);
+        BotaoEditarDisciplinas.setBounds(0, 150, 180, 50);
+
+        PainelSubmenu.add(SubmenuEdicao);
+        SubmenuEdicao.setBounds(0, 0, 180, 200);
+
+        SubmenuRelatorio.setLayout(null);
 
         BotaoRelatorioTurmas.setPreferredSize(new java.awt.Dimension(0, 50));
         BotaoRelatorioTurmas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -838,20 +921,15 @@ public Tela() {
         });
         BotaoRelatorioTurmas.setLayout(null);
 
-        jLabel45.setBackground(new java.awt.Color(255, 102, 204));
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagem/icons8-magazine-23.png"))); // NOI18N
-        BotaoRelatorioTurmas.add(jLabel45);
-        jLabel45.setBounds(20, 0, 30, 50);
-
         jLabel46.setBackground(new java.awt.Color(105, 160, 115));
         jLabel46.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel46.setText("             Turmas");
+        jLabel46.setText("          Relatório Turmas");
         jLabel46.setOpaque(true);
         BotaoRelatorioTurmas.add(jLabel46);
         jLabel46.setBounds(0, 0, 180, 50);
 
-        PainelSubmenu.add(BotaoRelatorioTurmas);
+        SubmenuRelatorio.add(BotaoRelatorioTurmas);
         BotaoRelatorioTurmas.setBounds(0, 0, 180, 50);
 
         BotaoRelatorioDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -863,7 +941,7 @@ public Tela() {
         jLabel47.setBackground(new java.awt.Color(105, 160, 115));
         jLabel47.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("             Docentes");
+        jLabel47.setText("         Relatório Docentes");
         jLabel47.setMaximumSize(new java.awt.Dimension(77, 19));
         jLabel47.setMinimumSize(new java.awt.Dimension(77, 19));
         jLabel47.setOpaque(true);
@@ -881,8 +959,8 @@ public Tela() {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        PainelSubmenu.add(BotaoRelatorioDocentes);
-        BotaoRelatorioDocentes.setBounds(0, 50, 180, 0);
+        SubmenuRelatorio.add(BotaoRelatorioDocentes);
+        BotaoRelatorioDocentes.setBounds(0, 50, 180, 50);
 
         BotaoRelatorioAluno.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -893,7 +971,7 @@ public Tela() {
         jLabel48.setBackground(new java.awt.Color(105, 160, 115));
         jLabel48.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setText("             Alunos");
+        jLabel48.setText("         Relatório Alunos");
         jLabel48.setMaximumSize(new java.awt.Dimension(77, 19));
         jLabel48.setMinimumSize(new java.awt.Dimension(77, 19));
         jLabel48.setOpaque(true);
@@ -911,8 +989,8 @@ public Tela() {
                 .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PainelSubmenu.add(BotaoRelatorioAluno);
-        BotaoRelatorioAluno.setBounds(0, 100, 180, 0);
+        SubmenuRelatorio.add(BotaoRelatorioAluno);
+        BotaoRelatorioAluno.setBounds(0, 100, 180, 50);
 
         BotaoRelatorioDisciplinas.setPreferredSize(new java.awt.Dimension(0, 50));
         BotaoRelatorioDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -924,7 +1002,7 @@ public Tela() {
         jLabel49.setBackground(new java.awt.Color(105, 160, 115));
         jLabel49.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel49.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel49.setText("             Disciplinas ");
+        jLabel49.setText("         Relatório Disciplinas ");
         jLabel49.setOpaque(true);
         jLabel49.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -945,16 +1023,21 @@ public Tela() {
                 .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PainelSubmenu.add(BotaoRelatorioDisciplinas);
+        SubmenuRelatorio.add(BotaoRelatorioDisciplinas);
         BotaoRelatorioDisciplinas.setBounds(0, 150, 180, 50);
+
+        PainelSubmenu.add(SubmenuRelatorio);
+        SubmenuRelatorio.setBounds(0, 0, 180, 200);
 
         TelaDocente.add(PainelSubmenu);
         PainelSubmenu.setBounds(30, 70, 180, 200);
 
         MiniTelas.setBackground(new java.awt.Color(228, 255, 255));
+        MiniTelas.setMaximumSize(new java.awt.Dimension(590, 470));
         MiniTelas.setLayout(null);
 
         CadastrarDisciplina.setBackground(new java.awt.Color(228, 255, 255));
+        CadastrarDisciplina.setMaximumSize(new java.awt.Dimension(590, 470));
         CadastrarDisciplina.setLayout(null);
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -964,6 +1047,7 @@ public Tela() {
         CadastrarDisciplina.add(CaixaDeTextoDisciplina);
         CaixaDeTextoDisciplina.setBounds(29, 63, 117, 22);
 
+        BotaoConcluirCadastroDisciplinas.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         BotaoConcluirCadastroDisciplinas.setText("Cadastrar");
         BotaoConcluirCadastroDisciplinas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -971,9 +1055,9 @@ public Tela() {
             }
         });
         CadastrarDisciplina.add(BotaoConcluirCadastroDisciplinas);
-        BotaoConcluirCadastroDisciplinas.setBounds(220, 420, 80, 23);
+        BotaoConcluirCadastroDisciplinas.setBounds(220, 420, 90, 30);
 
-        ListaDeAlunos.setViewportView(listadealunos);
+        ListaDeAlunos.setViewportView(ListaAlunosCadastrarDisciplinas);
 
         CadastrarDisciplina.add(ListaDeAlunos);
         ListaDeAlunos.setBounds(30, 130, 224, 280);
@@ -997,6 +1081,7 @@ public Tela() {
         CadastrarDisciplina.setBounds(0, 0, 590, 470);
 
         CadastrarAluno.setBackground(new java.awt.Color(228, 255, 255));
+        CadastrarAluno.setMaximumSize(new java.awt.Dimension(590, 470));
         CadastrarAluno.setPreferredSize(new java.awt.Dimension(520, 390));
 
         Moldura3x4.setLayout(null);
@@ -1122,7 +1207,7 @@ public Tela() {
                     .addComponent(TabelaDocumentosAnexados, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoProcurarDocumentacao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(BotaoConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -1131,6 +1216,7 @@ public Tela() {
         CadastrarAluno.setBounds(0, 0, 590, 470);
 
         CadastrarDocente.setBackground(new java.awt.Color(228, 255, 255));
+        CadastrarDocente.setMaximumSize(new java.awt.Dimension(590, 470));
         CadastrarDocente.setPreferredSize(new java.awt.Dimension(520, 390));
 
         Moldura3x5.setLayout(null);
@@ -1268,6 +1354,7 @@ public Tela() {
         CadastrarDocente.setBounds(0, 0, 590, 470);
 
         CadastrarTurma.setBackground(new java.awt.Color(228, 255, 255));
+        CadastrarTurma.setMaximumSize(new java.awt.Dimension(590, 470));
         CadastrarTurma.setLayout(null);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1277,7 +1364,7 @@ public Tela() {
         CadastrarTurma.add(CaixaDeTextoCadastroTurma);
         CaixaDeTextoCadastroTurma.setBounds(20, 70, 140, 22);
 
-        jScrollPane3.setViewportView(ListaDisciplinas);
+        jScrollPane3.setViewportView(ListaAlunosCadastrarTurma);
 
         CadastrarTurma.add(jScrollPane3);
         jScrollPane3.setBounds(20, 160, 230, 240);
@@ -1294,215 +1381,639 @@ public Tela() {
         MiniTelas.add(CadastrarTurma);
         CadastrarTurma.setBounds(-1, -1, 590, 470);
 
-        jPanel9.setBackground(new java.awt.Color(228, 255, 255));
+        EditarDisciplina.setBackground(new java.awt.Color(228, 255, 255));
+        EditarDisciplina.setMaximumSize(new java.awt.Dimension(590, 470));
+        EditarDisciplina.setPreferredSize(new java.awt.Dimension(590, 470));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021", "2022" }));
+        TabelaEditarDisciplinas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1º Ti-A", "1º Ti-B", "2º Ti-A", "2º Ti-B", "3º Ti-A", "3º Ti-B", "4º Ti-A", "4º Ti-B", " ", " ", " ", " ", " " }));
+            },
+            new String [] {
+                "Docentes", "Alunos"
+            }
+        ));
+        TabelaDisc1.setViewportView(TabelaEditarDisciplinas);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1º Unidade ", "2º Unidade ", "3º Unidade ", "4º Unidade " }));
+        jLabel54.setText("Disciplinas");
 
-        jRadioButton1.setText("Técnico em Eletromecânica");
+        jButton4.setText("Salvar");
 
-        jRadioButton2.setText("Técnico em Informatica");
+        jLabel56.setText("Novo Nome:");
+
+        jLabel57.setText("Professores Disponiveis");
+
+        jLabel58.setText("Alunos Disponíveis");
+
+        jLabel59.setText("Para remover uma pessoa, selecione-a e aperte del.");
+
+        javax.swing.GroupLayout EditarDisciplinaLayout = new javax.swing.GroupLayout(EditarDisciplina);
+        EditarDisciplina.setLayout(EditarDisciplinaLayout);
+        EditarDisciplinaLayout.setHorizontalGroup(
+            EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                        .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBox8, javax.swing.GroupLayout.Alignment.LEADING, 0, 168, Short.MAX_VALUE))
+                                .addGap(57, 57, 57))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditarDisciplinaLayout.createSequentialGroup()
+                                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54)
+                                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(146, 146, 146)))
+                        .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel57)
+                                .addComponent(jComboBox3, 0, 177, Short.MAX_VALUE)
+                                .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel58))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditarDisciplinaLayout.createSequentialGroup()
+                        .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TabelaDisc1)
+                            .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4)))
+                        .addGap(16, 16, 16))))
+        );
+        EditarDisciplinaLayout.setVerticalGroup(
+            EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(jLabel57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(jLabel58))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(TabelaDisc1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(EditarDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4))
+                    .addGroup(EditarDisciplinaLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel59)))
+                .addContainerGap())
+        );
+
+        MiniTelas.add(EditarDisciplina);
+        EditarDisciplina.setBounds(0, 0, 590, 470);
+
+        EditarAluno.setBackground(new java.awt.Color(228, 255, 255));
+        EditarAluno.setMaximumSize(new java.awt.Dimension(590, 470));
+        EditarAluno.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        jLabel53.setText(" Alunos");
+
+        jLabel60.setText("Novo Nome:");
+
+        jLabel61.setText("Nova Matricula:");
+
+        jButton5.setText("Salvar");
+
+        javax.swing.GroupLayout EditarAlunoLayout = new javax.swing.GroupLayout(EditarAluno);
+        EditarAluno.setLayout(EditarAlunoLayout);
+        EditarAlunoLayout.setHorizontalGroup(
+            EditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditarAlunoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(EditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5)
+                    .addGroup(EditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel60)
+                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox7, 0, 163, Short.MAX_VALUE)
+                        .addComponent(jTextField2)
+                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField3)))
+                .addContainerGap(403, Short.MAX_VALUE))
+        );
+        EditarAlunoLayout.setVerticalGroup(
+            EditarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditarAlunoLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel61)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jButton5)
+                .addGap(200, 200, 200))
+        );
+
+        MiniTelas.add(EditarAluno);
+        EditarAluno.setBounds(0, 0, 590, 470);
+
+        EditarDocente.setBackground(new java.awt.Color(228, 255, 255));
+        EditarDocente.setMaximumSize(new java.awt.Dimension(590, 470));
+        EditarDocente.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        jLabel62.setText("Docentes");
+
+        jLabel63.setText("Novo Nome:");
+
+        jLabel64.setText("Nova Matricula:");
+
+        jButton6.setText("Salvar");
+
+        javax.swing.GroupLayout EditarDocenteLayout = new javax.swing.GroupLayout(EditarDocente);
+        EditarDocente.setLayout(EditarDocenteLayout);
+        EditarDocenteLayout.setHorizontalGroup(
+            EditarDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditarDocenteLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(EditarDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton6)
+                    .addGroup(EditarDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel63)
+                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox11, 0, 163, Short.MAX_VALUE)
+                        .addComponent(jTextField4)
+                        .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField5)))
+                .addContainerGap(403, Short.MAX_VALUE))
+        );
+        EditarDocenteLayout.setVerticalGroup(
+            EditarDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditarDocenteLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel62)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel63)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jButton6)
+                .addGap(200, 200, 200))
+        );
+
+        MiniTelas.add(EditarDocente);
+        EditarDocente.setBounds(0, 0, 590, 470);
+
+        EditarTurma.setBackground(new java.awt.Color(228, 255, 255));
+        EditarTurma.setMaximumSize(new java.awt.Dimension(590, 470));
+        EditarTurma.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        jLabel55.setText("Turmas:");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Alunos", "Situação", "Nota "
+                "Alunos"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(jTable1);
 
-        jButton9.setText("Procurar");
+        jLabel65.setText("Para remover uma pessoa, selecione-a e aperte del.");
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(0, 59, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addGap(12, 12, 12)
-                        .addComponent(jRadioButton2))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jLabel66.setText("Novo Nome");
+
+        jTextField6.setText("jTextField6");
+
+        jButton7.setText("Salvar");
+
+        javax.swing.GroupLayout EditarTurmaLayout = new javax.swing.GroupLayout(EditarTurma);
+        EditarTurma.setLayout(EditarTurmaLayout);
+        EditarTurmaLayout.setHorizontalGroup(
+            EditarTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditarTurmaLayout.createSequentialGroup()
+                .addGroup(EditarTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EditarTurmaLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton9))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 60, Short.MAX_VALUE))
+                        .addGroup(EditarTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel55)
+                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(EditarTurmaLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jButton7)))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(0, 63, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+        EditarTurmaLayout.setVerticalGroup(
+            EditarTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditarTurmaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9))
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 64, Short.MAX_VALUE))
+                .addComponent(jLabel66)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7)
+                .addGap(90, 90, 90))
         );
 
-        MiniTelas.add(jPanel9);
-        jPanel9.setBounds(0, 0, 590, 470);
+        MiniTelas.add(EditarTurma);
+        EditarTurma.setBounds(0, 0, 590, 470);
 
-        DisciplinasBusca.setBackground(new java.awt.Color(228, 255, 255));
+        RemoverDisciplina.setBackground(new java.awt.Color(228, 255, 255));
+        RemoverDisciplina.setMaximumSize(new java.awt.Dimension(590, 470));
+        RemoverDisciplina.setPreferredSize(new java.awt.Dimension(590, 470));
+
+        TabelaEditarDisciplinas1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Disciplinas "
+            }
+        ));
+        TabelaDisc2.setViewportView(TabelaEditarDisciplinas1);
+
+        jButton11.setText("Remover");
+
+        jLabel80.setText("Para remover uma disciplina, selecione-a(as).");
+
+        javax.swing.GroupLayout RemoverDisciplinaLayout = new javax.swing.GroupLayout(RemoverDisciplina);
+        RemoverDisciplina.setLayout(RemoverDisciplinaLayout);
+        RemoverDisciplinaLayout.setHorizontalGroup(
+            RemoverDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoverDisciplinaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(RemoverDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton11)
+                    .addComponent(TabelaDisc2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(255, Short.MAX_VALUE))
+        );
+        RemoverDisciplinaLayout.setVerticalGroup(
+            RemoverDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoverDisciplinaLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(TabelaDisc2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel80)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton11)
+                .addContainerGap())
+        );
+
+        MiniTelas.add(RemoverDisciplina);
+        RemoverDisciplina.setBounds(0, 0, 590, 470);
+
+        RemoverAluno.setBackground(new java.awt.Color(228, 255, 255));
+        RemoverAluno.setMaximumSize(new java.awt.Dimension(590, 470));
+        RemoverAluno.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        jLabel67.setText(" Alunos");
+
+        jLabel68.setText("Novo Nome:");
+
+        jLabel69.setText("Nova Matricula:");
+
+        jButton8.setText("Salvar");
+
+        javax.swing.GroupLayout RemoverAlunoLayout = new javax.swing.GroupLayout(RemoverAluno);
+        RemoverAluno.setLayout(RemoverAlunoLayout);
+        RemoverAlunoLayout.setHorizontalGroup(
+            RemoverAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoverAlunoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(RemoverAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton8)
+                    .addGroup(RemoverAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel68)
+                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox12, 0, 163, Short.MAX_VALUE)
+                        .addComponent(jTextField7)
+                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField8)))
+                .addContainerGap(403, Short.MAX_VALUE))
+        );
+        RemoverAlunoLayout.setVerticalGroup(
+            RemoverAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoverAlunoLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel67)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel68)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel69)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jButton8)
+                .addGap(200, 200, 200))
+        );
+
+        MiniTelas.add(RemoverAluno);
+        RemoverAluno.setBounds(0, 0, 590, 470);
+
+        RemoverDocente.setBackground(new java.awt.Color(228, 255, 255));
+        RemoverDocente.setMaximumSize(new java.awt.Dimension(590, 470));
+        RemoverDocente.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        jLabel70.setText("Docentes");
+
+        jLabel71.setText("Novo Nome:");
+
+        jLabel72.setText("Nova Matricula:");
+
+        jButton9.setText("Salvar");
+
+        javax.swing.GroupLayout RemoverDocenteLayout = new javax.swing.GroupLayout(RemoverDocente);
+        RemoverDocente.setLayout(RemoverDocenteLayout);
+        RemoverDocenteLayout.setHorizontalGroup(
+            RemoverDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoverDocenteLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(RemoverDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9)
+                    .addGroup(RemoverDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel71)
+                        .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox13, 0, 163, Short.MAX_VALUE)
+                        .addComponent(jTextField9)
+                        .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField10)))
+                .addContainerGap(403, Short.MAX_VALUE))
+        );
+        RemoverDocenteLayout.setVerticalGroup(
+            RemoverDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoverDocenteLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel70)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel71)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel72)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jButton9)
+                .addGap(200, 200, 200))
+        );
+
+        MiniTelas.add(RemoverDocente);
+        RemoverDocente.setBounds(0, 0, 590, 470);
+
+        RemoverTurma.setBackground(new java.awt.Color(228, 255, 255));
+        RemoverTurma.setMaximumSize(new java.awt.Dimension(590, 470));
+        RemoverTurma.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Turmas"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable3);
+
+        jLabel74.setText("Para remover uma turma, selecione-a e aperte del.");
+
+        jButton10.setText("Remover");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RemoverTurmaLayout = new javax.swing.GroupLayout(RemoverTurma);
+        RemoverTurma.setLayout(RemoverTurmaLayout);
+        RemoverTurmaLayout.setHorizontalGroup(
+            RemoverTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoverTurmaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(RemoverTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
+                    .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(264, Short.MAX_VALUE))
+        );
+        RemoverTurmaLayout.setVerticalGroup(
+            RemoverTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoverTurmaLayout.createSequentialGroup()
+                .addContainerGap(85, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel74)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton10)
+                .addGap(90, 90, 90))
+        );
+
+        MiniTelas.add(RemoverTurma);
+        RemoverTurma.setBounds(0, 0, 590, 470);
+
+        RelatorioDisciplina.setBackground(new java.awt.Color(228, 255, 255));
+        RelatorioDisciplina.setMaximumSize(new java.awt.Dimension(590, 470));
+        RelatorioDisciplina.setPreferredSize(new java.awt.Dimension(590, 470));
 
         TabelaDisciplinas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Disciplinas", "Nº de Alunos", "Nº de professores", "Carga horária(semanal) "
+                "Docentes", "Alunos"
             }
         ));
         TabelaDisc.setViewportView(TabelaDisciplinas);
 
-        BotaoTecEletro.setText("Técnico em Eletromecânica");
-        BotaoTecEletro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotaoTecEletroMouseClicked(evt);
-            }
-        });
+        jLabel52.setText("Disciplinas");
 
-        BotaoTecInfo.setText("Técnico em Informatica");
-        BotaoTecInfo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotaoTecInfoMouseClicked(evt);
-            }
-        });
-
-        AnoTurmaDisciplina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1º Ano", "2º Ano", "3º Ano", "4º Ano" }));
-
-        jLabel13.setText("Ano");
-
-        BotaoProcurarDisciplinas.setText("Procurar");
-        BotaoProcurarDisciplinas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotaoProcurarDisciplinasMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout DisciplinasBuscaLayout = new javax.swing.GroupLayout(DisciplinasBusca);
-        DisciplinasBusca.setLayout(DisciplinasBuscaLayout);
-        DisciplinasBuscaLayout.setHorizontalGroup(
-            DisciplinasBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DisciplinasBuscaLayout.createSequentialGroup()
-                .addGroup(DisciplinasBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(DisciplinasBuscaLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DisciplinasBuscaLayout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addGroup(DisciplinasBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DisciplinasBuscaLayout.createSequentialGroup()
-                                .addComponent(BotaoTecEletro)
-                                .addGap(12, 12, 12)
-                                .addComponent(BotaoTecInfo)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(AnoTurmaDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DisciplinasBuscaLayout.createSequentialGroup()
-                                .addGap(149, 149, 149)
-                                .addComponent(BotaoProcurarDisciplinas)))))
+        javax.swing.GroupLayout RelatorioDisciplinaLayout = new javax.swing.GroupLayout(RelatorioDisciplina);
+        RelatorioDisciplina.setLayout(RelatorioDisciplinaLayout);
+        RelatorioDisciplinaLayout.setHorizontalGroup(
+            RelatorioDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RelatorioDisciplinaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(RelatorioDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel52)
+                    .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
-        DisciplinasBuscaLayout.setVerticalGroup(
-            DisciplinasBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DisciplinasBuscaLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(DisciplinasBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotaoTecEletro)
-                    .addComponent(BotaoTecInfo)
-                    .addGroup(DisciplinasBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel13)
-                        .addComponent(AnoTurmaDisciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(BotaoProcurarDisciplinas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        RelatorioDisciplinaLayout.setVerticalGroup(
+            RelatorioDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RelatorioDisciplinaLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11))
         );
 
-        MiniTelas.add(DisciplinasBusca);
-        DisciplinasBusca.setBounds(0, 0, 590, 470);
+        MiniTelas.add(RelatorioDisciplina);
+        RelatorioDisciplina.setBounds(0, 0, 590, 470);
 
-        MiniTelaDocentes.setBackground(new java.awt.Color(228, 255, 255));
-        MiniTelaDocentes.setMinimumSize(new java.awt.Dimension(510, 460));
+        RelatorioAluno.setBackground(new java.awt.Color(228, 255, 255));
+        RelatorioAluno.setMaximumSize(new java.awt.Dimension(590, 470));
+        RelatorioAluno.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        TabelaDocentes2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Aluno", "Nota", "Situação "
+            }
+        ));
+        TabelaDoc2.setViewportView(TabelaDocentes2);
+
+        jLabel13.setText("Disciplinas:");
+
+        javax.swing.GroupLayout RelatorioAlunoLayout = new javax.swing.GroupLayout(RelatorioAluno);
+        RelatorioAluno.setLayout(RelatorioAlunoLayout);
+        RelatorioAlunoLayout.setHorizontalGroup(
+            RelatorioAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RelatorioAlunoLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(RelatorioAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TabelaDoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        RelatorioAlunoLayout.setVerticalGroup(
+            RelatorioAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RelatorioAlunoLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(TabelaDoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        MiniTelas.add(RelatorioAluno);
+        RelatorioAluno.setBounds(0, 0, 590, 470);
+
+        RelatorioDocente.setBackground(new java.awt.Color(228, 255, 255));
+        RelatorioDocente.setMaximumSize(new java.awt.Dimension(590, 470));
+        RelatorioDocente.setMinimumSize(new java.awt.Dimension(590, 470));
 
         TabelaDocentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Docente", "Disciplina ", "Ano"
+                "Docente", "Disciplina ", "Turma"
             }
         ));
         TabelaDoc.setViewportView(TabelaDocentes);
 
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pegar valor no array de disciplinas", " " }));
-
-        jButton10.setText("Procurar");
-
-        javax.swing.GroupLayout MiniTelaDocentesLayout = new javax.swing.GroupLayout(MiniTelaDocentes);
-        MiniTelaDocentes.setLayout(MiniTelaDocentesLayout);
-        MiniTelaDocentesLayout.setHorizontalGroup(
-            MiniTelaDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MiniTelaDocentesLayout.createSequentialGroup()
+        javax.swing.GroupLayout RelatorioDocenteLayout = new javax.swing.GroupLayout(RelatorioDocente);
+        RelatorioDocente.setLayout(RelatorioDocenteLayout);
+        RelatorioDocenteLayout.setHorizontalGroup(
+            RelatorioDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RelatorioDocenteLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(MiniTelaDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TabelaDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(MiniTelaDocentesLayout.createSequentialGroup()
-                        .addGroup(MiniTelaDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox8, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(39, 39, 39)
-                        .addComponent(jButton10)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addComponent(TabelaDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
-        MiniTelaDocentesLayout.setVerticalGroup(
-            MiniTelaDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MiniTelaDocentesLayout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(MiniTelaDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10))
-                .addGap(27, 27, 27)
-                .addComponent(TabelaDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+        RelatorioDocenteLayout.setVerticalGroup(
+            RelatorioDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RelatorioDocenteLayout.createSequentialGroup()
+                .addContainerGap(89, Short.MAX_VALUE)
+                .addComponent(TabelaDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
 
-        MiniTelas.add(MiniTelaDocentes);
-        MiniTelaDocentes.setBounds(0, 0, 590, 470);
+        MiniTelas.add(RelatorioDocente);
+        RelatorioDocente.setBounds(0, 0, 590, 470);
+
+        RelatorioTurma.setBackground(new java.awt.Color(228, 255, 255));
+        RelatorioTurma.setMaximumSize(new java.awt.Dimension(590, 470));
+        RelatorioTurma.setMinimumSize(new java.awt.Dimension(590, 470));
+
+        TabelaDocentes1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Docentes", "Alunos ", "Aprovados", "Reprovados "
+            }
+        ));
+        TabelaDoc1.setViewportView(TabelaDocentes1);
+
+        jLabel51.setText("Turmas:");
+
+        javax.swing.GroupLayout RelatorioTurmaLayout = new javax.swing.GroupLayout(RelatorioTurma);
+        RelatorioTurma.setLayout(RelatorioTurmaLayout);
+        RelatorioTurmaLayout.setHorizontalGroup(
+            RelatorioTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RelatorioTurmaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(RelatorioTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel51)
+                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TabelaDoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        RelatorioTurmaLayout.setVerticalGroup(
+            RelatorioTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RelatorioTurmaLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(jLabel51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(TabelaDoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
+        MiniTelas.add(RelatorioTurma);
+        RelatorioTurma.setBounds(0, 0, 590, 470);
 
         TelaDocente.add(MiniTelas);
         MiniTelas.setBounds(210, 70, 590, 470);
@@ -1852,15 +2363,7 @@ public Tela() {
         loginUsuario.setForeground(new java.awt.Color(0, 0, 0));
 
     }//GEN-LAST:event_ClickMouseUsuario
-
-    private void ImagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagemMouseClicked
-        if (loginUsuario.getText() == null) {
-            loginUsuario.setText("Usúario");
-        }
-        if (loginSenha.getText() == null) {
-            loginSenha.setText("Senha");
-    }//GEN-LAST:event_ImagemMouseClicked
-    }
+    
     private void ClickMouseSenha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickMouseSenha
         loginSenha.setText(null);
         loginSenha.setFont(new java.awt.Font("Arial Unicode MS", 2, 12)); // NOI18N
@@ -1868,64 +2371,86 @@ public Tela() {
     }//GEN-LAST:event_ClickMouseSenha
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         Username = loginUsuario.getText();
         Password = loginSenha.getText();
-        
+
         if ((Username.contains("abc") || Username.equals(usuario))
                 && (Password.contains("123") || Password.equals(senha))) {
             loginUsuario.setText(null);
             loginSenha.setText(null);
             TelaLogin.setVisible(false);
             TelaEstudante.setVisible(true);
-            
+
         }
         if (Username.contains("def") && Password.contains("456")) {//Procurar na lista de Professores
             loginUsuario.setText(null);
             loginSenha.setText(null);
             TelaLogin.setVisible(false);
-            
+
             TelaDocente.setVisible(true);
             LimparMiniTela();
-            PainelSubmenu.setVisible(false);
-            
+            //PainelSubmenu.setVisible(false);
+
     }//GEN-LAST:event_jButton1ActionPerformed
     }
 
-    private void LimparMiniTela() {    
+    private void LimparMiniTela() {
         CadastrarAluno.setVisible(false);
-        MiniTelaDocentes.setVisible(false);
+        CadastrarDocente.setVisible(false);
+        CadastrarTurma.setVisible(false);
+        CadastrarDisciplina.setVisible(false);
+        
+        RelatorioDocente.setVisible(false);
+        RelatorioDisciplina.setVisible(false);
+        RelatorioAluno.setVisible(false);
+        RelatorioTurma.setVisible(false);
+        
+        EditarDisciplina.setVisible(false);
+        EditarAluno.setVisible(false);
+        EditarDocente.setVisible(false);
+        EditarTurma.setVisible(false);        
+         
+        RemoverDisciplina.setVisible(false); 
+        RemoverAluno.setVisible(false); 
+        RemoverDocente.setVisible(false);         
+        RemoverTurma.setVisible(false); 
+                
         MiniTelaDadosPessoais.setVisible(false);
         MiniTelaBoletim.setVisible(false);
-        CadastrarDisciplina.setVisible(false);
-        CadastrarTurma.setVisible(false);
-        MiniTelaDocentes.setVisible(false);
-        jPanel9.setVisible(false);
-        DisciplinasBusca.setVisible(false);
-        CadastrarDocente.setVisible(false);
-    }
-    private void LimparCaixasDeTextos(){ 
-      CaixaDeTextoCadastroNomeDocente.setText(null);
-      CaixaDeTextoCadastroDataNascDocente.setText(null);
-      CaixaDeTextoMatriculaDocente.setText(null);
-     CaixaDeTextoCadastroUsuarioDocente.setText(null);
-     CaixaDeTextoCadastroSenhaDocente.setText(null);
-     ListaDocumentosDocente.setText(null);
-     EnderecoFotoDocente.setText(null);
-    
-    CaixaDeTextoCadastroNomeAluno.setText(null);
-      CaixaDeTextoCadastroDataNascAluno.setText(null);
-      CaixaDeTextoMatriculaAluno.setText(null);
-     CaixaDeTextoCadastroUsuarioAluno.setText(null);
-     CaixaDeTextoCadastroSenhaAluno.setText(null);
-     ListaDocumentosAluno.setText(null);
-     EnderecoFotoAluno.setText(null);
      
-     CaixaDeTextoCadastroTurma.setText(null);
-     CaixaDeTextoDisciplina.setText(null);
+    }
+
+    private void LimparCaixasDeTextos() {
+        CaixaDeTextoCadastroNomeDocente.setText(null);
+        CaixaDeTextoCadastroDataNascDocente.setText(null);
+        CaixaDeTextoMatriculaDocente.setText(null);
+        CaixaDeTextoCadastroUsuarioDocente.setText(null);
+        CaixaDeTextoCadastroSenhaDocente.setText(null);
+        ListaDocumentosDocente.setText(null);
+        EnderecoFotoDocente.setText(null);
+
+        CaixaDeTextoCadastroNomeAluno.setText(null);
+        CaixaDeTextoCadastroDataNascAluno.setText(null);
+        CaixaDeTextoMatriculaAluno.setText(null);
+        CaixaDeTextoCadastroUsuarioAluno.setText(null);
+        CaixaDeTextoCadastroSenhaAluno.setText(null);
+        ListaDocumentosAluno.setText(null);
+        EnderecoFotoAluno.setText(null);
+
+        CaixaDeTextoCadastroTurma.setText(null);
+        CaixaDeTextoDisciplina.setText(null);
+
+    } public void LimparSubmenus(){
+     SubmenuRemocao.setVisible(false);
+     SubmenuCadastro.setVisible(false);
+     SubmenuEdicao.setVisible(false);
+     SubmenuRelatorio.setVisible(false);
+     
+        PainelMenu.setVisible(true);
         
     }
-  
+
     private void BotaoSairTelaLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairTelaLogin
         System.exit(0);
     }//GEN-LAST:event_BotaoSairTelaLogin
@@ -1933,7 +2458,7 @@ public Tela() {
     private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
         TelaDocente.setVisible(false);
         TelaLogin.setVisible(true);
-       
+
     }//GEN-LAST:event_BotaoSairActionPerformed
 
     private void loginSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginSenhaKeyPressed
@@ -1959,7 +2484,7 @@ public Tela() {
 
     private void BotaoSair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSair1ActionPerformed
         TelaEstudante.setVisible(false);
-        TelaLogin.setVisible(true);// TODO add your handling code here:
+        TelaLogin.setVisible(true);
         LimparTabelaDisciplinas();
     }//GEN-LAST:event_BotaoSair1ActionPerformed
 
@@ -1978,25 +2503,27 @@ public Tela() {
     private void BotaoConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroActionPerformed
         String nome = CaixaDeTextoCadastroNomeAluno.getText();
         String data = CaixaDeTextoCadastroDataNascAluno.getText();
-        
+
         usuario = CaixaDeTextoCadastroUsuarioAluno.getText();
         senha = CaixaDeTextoCadastroSenhaAluno.getText();
 
         //FotoDadosPessoais.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(FotoDadosPessoais.getWidth(), FotoDadosPessoais.getHeight(), Image.SCALE_DEFAULT)));
         NomeDoAluno.setText(CaixaDeTextoCadastroNomeAluno.getText());
         DataNascDoAluno.setText(CaixaDeTextoCadastroDataNascAluno.getText());
-       
- 
+
+        JOptionPane.showMessageDialog(null, "Cadastro realizado");
         nomesdealunos = CaixaDeTextoCadastroNomeAluno.getText();
         for (int i = 0; i < nomesAlunos.length; i++) {
-            
+
             if (nomesAlunos[i] == null) {
                 nomesAlunos[i] = nomesdealunos;
-                listadealunos.setListData(nomesAlunos);                
-                break;                
+                ListaAlunosCadastrarDisciplinas.setListData(nomesAlunos);
+                ListaAlunosCadastrarTurma.setListData(nomesAlunos);
+                
+                break;
             }
         }
-        JOptionPane.showMessageDialog(null, "Cadastro realizado");
+
     }//GEN-LAST:event_BotaoConcluirCadastroActionPerformed
 
     private void BotaoProcurarImagem3x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarImagem3x4ActionPerformed
@@ -2006,51 +2533,20 @@ public Tela() {
             File file = new File("");
             file = arquivofoto.getSelectedFile();
             endereco = file.getAbsolutePath();
-            
+
             imagem = new ImageIcon(file.getPath());
             EnderecoFotoAluno.setText(endereco);
             Foto3x4.setIcon(new ImageIcon(imagem.getImage().getScaledInstance(Foto3x4.getWidth(), Foto3x4.getHeight(), Image.SCALE_DEFAULT)));
-            
+
         }
     }//GEN-LAST:event_BotaoProcurarImagem3x4ActionPerformed
-
-    private void BotaoProcurarDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoProcurarDisciplinasMouseClicked
-        DefaultTableModel dtmDisciplinas = (DefaultTableModel) TabelaDisciplinas.getModel();
-        
-        if (((DefaultTableModel) TabelaDisciplinas.getModel()).getRowCount() > 0) {
-            for (int i = 0; i < TabelaDisciplinas.getRowCount(); i++) {
-                ((DefaultTableModel) TabelaDisciplinas.getModel()).removeRow(i);
-            }
-        }
-        
-        if (BotaoTecEletro.isSelected()) {
-            //usar o comando this. para cada atributo de disciplina(qtd de alunos, caga horaria,etc.)
-            if (AnoTurmaDisciplina.getSelectedItem() == "2º Ano") {
-                dtmDisciplinas.addRow(new String[]{"Geografia", "12", "2", "4 horas"});
-                dtmDisciplinas.addRow(new String[]{"Matemática", "18", "4", "5 horas"});
-    }//GEN-LAST:event_BotaoProcurarDisciplinasMouseClicked
-        }
-        if (BotaoTecInfo.isSelected()) {
-            if (AnoTurmaDisciplina.getSelectedItem() == "3º Ano") {
-                dtmDisciplinas.addRow(new String[]{"Inglês", "25", "1", "2 horas"});
-                dtmDisciplinas.addRow(new String[]{"Filosofia", "15", "3", "1 horas"});
-            }
-        }
-    }
-    private void BotaoTecEletroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoTecEletroMouseClicked
-        BotaoTecInfo.setSelected(false);
-    }//GEN-LAST:event_BotaoTecEletroMouseClicked
-
-    private void BotaoTecInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoTecInfoMouseClicked
-        BotaoTecEletro.setSelected(false);
-    }//GEN-LAST:event_BotaoTecInfoMouseClicked
 
     private void ClickBotaoDisciplinas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoDisciplinas
         LimparMiniTela();
         LimparCaixasDeTextos();
         LimparTabelaDisciplinas();
         CadastrarDisciplina.setVisible(true);
-        DisciplinasBusca.setVisible(false);
+        RelatorioDisciplina.setVisible(false);
     }//GEN-LAST:event_ClickBotaoDisciplinas
 
     private void ClickBotaoCadastrarAluno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoCadastrarAluno
@@ -2058,36 +2554,37 @@ public Tela() {
         LimparCaixasDeTextos();
         CadastrarAluno.setVisible(true);
         LimparTabelaDisciplinas();
-        
+
     }//GEN-LAST:event_ClickBotaoCadastrarAluno
 
     private void ClickNoBotaoCadastrarTurmas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoCadastrarTurmas
         LimparMiniTela();
-        jPanel9.setVisible(false);
-        CadastrarTurma.setVisible(true);
         
+        CadastrarTurma.setVisible(true);
+
         LimparTabelaDisciplinas();
     }//GEN-LAST:event_ClickNoBotaoCadastrarTurmas
 
     private void ClickBotaoCadastrarDocentes(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoCadastrarDocentes
         LimparMiniTela();
         LimparCaixasDeTextos();
-        LimparTabelaDisciplinas();   
-      CadastrarDocente.setVisible(true);       // TODO add your handling code here:
+        LimparTabelaDisciplinas();
+        CadastrarDocente.setVisible(true);      
     }//GEN-LAST:event_ClickBotaoCadastrarDocentes
 
     private void DeslizarMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeslizarMenuMouseClicked
-        
-        if (PainelSubmenu.getSize().getHeight() == 200 && PainelSubmenu.getSize().getWidth() == 180) {            
+
+        if (PainelSubmenu.getSize().getHeight() == 200 && PainelSubmenu.getSize().getWidth() == 180) {
             if (jPanel3.getSize().getHeight() == 330 && jPanel3.getSize().getWidth() == 180) {
-                
+
                 Thread th = new Thread() {
-                    
+
                     @Override
                     public void run() {
                         try {
                             for (int i = 180; i >= 0; i--) {
                                 Thread.sleep(0, 05);
+                                PainelMenu.setSize(i, 200);
                                 PainelSubmenu.setSize(i, 200);
                                 jPanel3.setSize(i, 330);
                             }
@@ -2099,18 +2596,19 @@ public Tela() {
         ;
                 th.start();
                 x = 0;
-                
+
             }
         }
         if (PainelSubmenu.getSize().getHeight() == 200 && PainelSubmenu.getSize().getWidth() < 180) {
             if (jPanel3.getSize().getHeight() == 330 && jPanel3.getSize().getWidth() < 180) {
                 Thread th = new Thread() {
-                    
+
                     @Override
                     public void run() {
                         try {
                             for (int i = 0; i <= 180; i++) {
                                 Thread.sleep(0, 05);
+                                PainelMenu.setSize(i, 200);
                                 PainelSubmenu.setSize(i, 200);
                                 jPanel3.setSize(i, 330);
                             }
@@ -2123,35 +2621,33 @@ public Tela() {
                 x = 210;
             }
         }
-    }    
-    
+    }
+
     private void BotaoConcluirCadastroDisciplinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroDisciplinasActionPerformed
         JOptionPane.showMessageDialog(null, "Cadastro realizado");
-       
-        nomesdedisciplinas = CaixaDeTextoDisciplina.getText();
-        for (int i = 0; i <nomesDisciplinas.length; i++) {
-            if (nomesDisciplinas[i] == null) {
-                nomesDisciplinas[i] = nomesdedisciplinas;
-                ListaDisciplinas.setListData(nomesDisciplinas);                
-                break;                
-            }
- CaixaDeTextoDisciplina.setText(null);
-       
-        }        
-        
+        CaixaDeTextoDisciplina.setText(null);
+        /* nomesdedisciplinas = CaixaDeTextoDisciplina.getText();
+         */
+
     }//GEN-LAST:event_BotaoConcluirCadastroDisciplinasActionPerformed
 
     private void ClickNoBotaoMenuCadastro(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoMenuCadastro
-        PainelMenu.setVisible(false);
-        PainelSubmenu.setVisible(true);
+        
+        LimparSubmenus();
+        PainelMenu.setVisible(false); 
+        SubmenuCadastro.setVisible(true);
     }//GEN-LAST:event_ClickNoBotaoMenuCadastro
 
     private void ClickBotaoMenuEditar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoMenuEditar
-        // TODO add your handling code here:
+        LimparSubmenus();
+        PainelMenu.setVisible(false);     
+      SubmenuEdicao.setVisible(true);
     }//GEN-LAST:event_ClickBotaoMenuEditar
 
     private void ClickBotaoMenuRemover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoMenuRemover
-        // TODO add your handling code here:
+        LimparSubmenus();
+        PainelMenu.setVisible(false);
+       SubmenuRemocao.setVisible(true);
     }//GEN-LAST:event_ClickBotaoMenuRemover
 
     private void jLabel29ClickBotaoDisciplinas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29ClickBotaoDisciplinas
@@ -2162,7 +2658,7 @@ public Tela() {
         LimparMiniTela();
         LimparCaixasDeTextos();
         CadastrarDisciplina.setVisible(true);
-        DisciplinasBusca.setVisible(false);
+        RelatorioDisciplina.setVisible(false);
     }//GEN-LAST:event_BotaoCadastrarDisciplinasMouseClicked
 
     private void BotaoProcurarImagem3x5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarImagem3x5ActionPerformed
@@ -2170,18 +2666,19 @@ public Tela() {
     }//GEN-LAST:event_BotaoProcurarImagem3x5ActionPerformed
 
     private void BotaoConcluirCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastro1ActionPerformed
-      nomesDeDocentes = CaixaDeTextoCadastroNomeDocente.getText();
+
+        nomesDeDocentes = CaixaDeTextoCadastroNomeDocente.getText();
         for (int i = 0; i < nomesAlunos.length; i++) {
-            
+
             if (nomesDocentes[i] == null) {
                 nomesDocentes[i] = nomesDeDocentes;
-                listadeprofessores.setListData(nomesDocentes);                
-                break;                
+                listadeprofessores.setListData(nomesDocentes);
+                break;
             }
         }
-        JOptionPane.showMessageDialog(null, "Cadastro realizado"); 
+        JOptionPane.showMessageDialog(null, "Cadastro realizado");
     }//GEN-LAST:event_BotaoConcluirCadastro1ActionPerformed
-  
+
     private void BotaoProcurarDocumentacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarDocumentacao1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotaoProcurarDocumentacao1ActionPerformed
@@ -2245,25 +2742,39 @@ public Tela() {
     private void BotaoRelatorioDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoRelatorioDisciplinasMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_BotaoRelatorioDisciplinasMouseClicked
-    
+
+    private void jLabel50MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel50MouseClicked
+       LimparSubmenus();
+    }//GEN-LAST:event_jLabel50MouseClicked
+
+    private void ImagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagemMouseClicked
+        if (loginUsuario.getText() == null) {
+            loginUsuario.setText("Usúario");
+        }
+        if (loginSenha.getText() == null) {
+            loginSenha.setText("Senha");
+    }//GEN-LAST:event_ImagemMouseClicked
+}
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void BotaoMenuRelatorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoMenuRelatorioMouseClicked
+        LimparSubmenus();
+        PainelMenu.setVisible(false);
+        SubmenuRelatorio.setVisible(true);
+    }//GEN-LAST:event_BotaoMenuRelatorioMouseClicked
+
     public void LimparTabelaDisciplinas() {
-        BotaoTecEletro.setSelected(false);
-        BotaoTecInfo.setSelected(false);
+       
         if (((DefaultTableModel) TabelaDisciplinas.getModel()).getRowCount() > 0) {
             for (int i = 0; i < TabelaDisciplinas.getRowCount(); i++) {
                 ((DefaultTableModel) TabelaDisciplinas.getModel()).removeRow(i);
             }
-            
+
         }
-        
     }
-    
-    public void MarcadorPressionado() {
-        /*if(BotaoTecEletro.getSelectedIcon()){
-       
-   }*/
-    }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2298,7 +2809,6 @@ public Tela() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AnoLetivoDoAluno;
-    private javax.swing.JComboBox<String> AnoTurmaDisciplina;
     private javax.swing.JPanel BotaoBoletim;
     private javax.swing.JPanel BotaoCadastrarAluno;
     private javax.swing.JPanel BotaoCadastrarDisciplinas;
@@ -2316,7 +2826,6 @@ public Tela() {
     private javax.swing.JPanel BotaoMenuEditar;
     private javax.swing.JPanel BotaoMenuRelatorio;
     private javax.swing.JPanel BotaoMenuRemover;
-    private javax.swing.JButton BotaoProcurarDisciplinas;
     private javax.swing.JButton BotaoProcurarDocumentacao;
     private javax.swing.JButton BotaoProcurarDocumentacao1;
     private javax.swing.JButton BotaoProcurarImagem3x4;
@@ -2331,8 +2840,6 @@ public Tela() {
     private javax.swing.JPanel BotaoRemoverTurmas;
     private javax.swing.JButton BotaoSair;
     private javax.swing.JButton BotaoSair1;
-    private javax.swing.JRadioButton BotaoTecEletro;
-    private javax.swing.JRadioButton BotaoTecInfo;
     private javax.swing.JPanel CadastrarAluno;
     private javax.swing.JPanel CadastrarDisciplina;
     private javax.swing.JPanel CadastrarDocente;
@@ -2352,8 +2859,11 @@ public Tela() {
     private javax.swing.JLabel CursoDoAluno;
     private javax.swing.JLabel DataNascDoAluno;
     private javax.swing.JLabel DeslizarMenu;
-    private javax.swing.JPanel DisciplinasBusca;
+    private javax.swing.JPanel EditarAluno;
     private javax.swing.JButton EditarDadosPessoais;
+    private javax.swing.JPanel EditarDisciplina;
+    private javax.swing.JPanel EditarDocente;
+    private javax.swing.JPanel EditarTurma;
     private javax.swing.JTextField EnderecoFotoAluno;
     private javax.swing.JTextField EnderecoFotoDocente;
     private javax.swing.JLabel Foto3x4;
@@ -2361,13 +2871,13 @@ public Tela() {
     private javax.swing.JLabel FotoDadosPessoais;
     private javax.swing.JLabel Imagem;
     private javax.swing.JLabel ImagemDeFundo;
+    private javax.swing.JList<String> ListaAlunosCadastrarDisciplinas;
+    private javax.swing.JList<String> ListaAlunosCadastrarTurma;
     private javax.swing.JScrollPane ListaDeAlunos;
-    private javax.swing.JList<String> ListaDisciplinas;
     private javax.swing.JTextPane ListaDocumentosAluno;
     private javax.swing.JTextPane ListaDocumentosDocente;
     private javax.swing.JPanel MiniTelaBoletim;
     private javax.swing.JPanel MiniTelaDadosPessoais;
-    private javax.swing.JPanel MiniTelaDocentes;
     private javax.swing.JPanel MiniTelas;
     private javax.swing.JPanel MiniTelasAluno;
     private javax.swing.JPanel Moldura3x4;
@@ -2375,24 +2885,57 @@ public Tela() {
     private javax.swing.JLabel NomeDoAluno;
     private javax.swing.JPanel PainelMenu;
     private javax.swing.JPanel PainelSubmenu;
+    private javax.swing.JPanel RelatorioAluno;
+    private javax.swing.JPanel RelatorioDisciplina;
+    private javax.swing.JPanel RelatorioDocente;
+    private javax.swing.JPanel RelatorioTurma;
+    private javax.swing.JPanel RemoverAluno;
+    private javax.swing.JPanel RemoverDisciplina;
+    private javax.swing.JPanel RemoverDocente;
+    private javax.swing.JPanel RemoverTurma;
+    private javax.swing.JPanel SubmenuCadastro;
+    private javax.swing.JPanel SubmenuEdicao;
+    private javax.swing.JPanel SubmenuRelatorio;
+    private javax.swing.JPanel SubmenuRemocao;
     private javax.swing.JScrollPane TabelaDisc;
+    private javax.swing.JScrollPane TabelaDisc1;
+    private javax.swing.JScrollPane TabelaDisc2;
     private javax.swing.JTable TabelaDisciplinas;
     private javax.swing.JScrollPane TabelaDoc;
+    private javax.swing.JScrollPane TabelaDoc1;
+    private javax.swing.JScrollPane TabelaDoc2;
     private javax.swing.JTable TabelaDocentes;
+    private javax.swing.JTable TabelaDocentes1;
+    private javax.swing.JTable TabelaDocentes2;
     private javax.swing.JScrollPane TabelaDocumentosAnexados;
     private javax.swing.JScrollPane TabelaDocumentosAnexados1;
+    private javax.swing.JTable TabelaEditarDisciplinas;
+    private javax.swing.JTable TabelaEditarDisciplinas1;
     private javax.swing.JPanel TelaDocente;
     private javax.swing.JPanel TelaEstudante;
     private javax.swing.JPanel TelaLogin;
     private javax.swing.JLabel Título;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
+    private javax.swing.JComboBox<String> jComboBox13;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
@@ -2423,26 +2966,48 @@ public Tela() {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -2452,17 +3017,24 @@ public Tela() {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JList<String> listadealunos;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JList<String> listadeprofessores;
     private javax.swing.JTextField loginSenha;
     private javax.swing.JTextField loginUsuario;
