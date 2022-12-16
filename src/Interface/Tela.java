@@ -2998,3 +2998,4 @@ CaixaDeTextoCadastroTurma.setText(null);
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
+//colocar a tabela deletar igual aluno.
