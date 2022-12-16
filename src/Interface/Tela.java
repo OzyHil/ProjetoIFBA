@@ -22,10 +22,13 @@ public class Tela extends javax.swing.JFrame {
 
     String Username = null, Password = null, senha = null, usuario = null, endereco = null, nomesdealunos = null, nomesdedisciplinas = null, nomesDeDocentes = null;
     ImageIcon imagem = null;
+
     int x = 210;
+
     String[] nomesAlunos = new String[100];
     String[] nomesDisciplinas = new String[100];
     String[] nomesDocentes = new String[100];
+    String[] nomesTurmas = new String[100];
 
     public Tela() {
         initComponents();
@@ -108,9 +111,6 @@ public class Tela extends javax.swing.JFrame {
         BotaoConcluirCadastroDisciplinas = new javax.swing.JButton();
         ListaDeAlunos = new javax.swing.JScrollPane();
         ListaAlunosCadastrarDisciplinas = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listadeprofessores = new javax.swing.JList<>();
-        jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         CadastrarAluno = new javax.swing.JPanel();
         Moldura3x4 = new javax.swing.JPanel();
@@ -123,7 +123,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         BotaoProcurarImagem3x4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        BotaoConcluirCadastro = new javax.swing.JButton();
+        BotaoConcluirCadastroAluno = new javax.swing.JButton();
         BotaoProcurarDocumentacao = new javax.swing.JButton();
         EnderecoFotoAluno = new javax.swing.JTextField();
         TabelaDocumentosAnexados = new javax.swing.JScrollPane();
@@ -142,7 +142,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         BotaoProcurarImagem3x5 = new javax.swing.JButton();
         jLabel33 = new javax.swing.JLabel();
-        BotaoConcluirCadastro1 = new javax.swing.JButton();
+        BotaoConcluirCadastroDocente = new javax.swing.JButton();
         BotaoProcurarDocumentacao1 = new javax.swing.JButton();
         EnderecoFotoDocente = new javax.swing.JTextField();
         TabelaDocumentosAnexados1 = new javax.swing.JScrollPane();
@@ -156,7 +156,7 @@ public class Tela extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         ListaAlunosCadastrarTurma = new javax.swing.JList<>();
         jLabel12 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        BotaoConcluirCadastroTurma = new javax.swing.JButton();
         EditarDisciplina = new javax.swing.JPanel();
         TabelaDisc1 = new javax.swing.JScrollPane();
         TabelaEditarDisciplinas = new javax.swing.JTable();
@@ -194,42 +194,34 @@ public class Tela extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         RemoverDisciplina = new javax.swing.JPanel();
         TabelaDisc2 = new javax.swing.JScrollPane();
-        TabelaEditarDisciplinas1 = new javax.swing.JTable();
-        jButton11 = new javax.swing.JButton();
+        TabelaRemoverDisciplinas = new javax.swing.JTable();
+        BotãoRemoverDisciplinasDoSistema = new javax.swing.JButton();
         jLabel80 = new javax.swing.JLabel();
         RemoverAluno = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        TabelaRemoverAlunos = new javax.swing.JTable();
         jLabel75 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
+        BotãoRemoverAlunoDoSistema = new javax.swing.JButton();
         RemoverDocente = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        TabelaRemoverDocentes = new javax.swing.JTable();
         jLabel76 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
+        BotãoRemoverDocentesDoSistema = new javax.swing.JButton();
         RemoverTurma = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        TabelaRemoverTurmas = new javax.swing.JTable();
         jLabel74 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
+        BotãoRemoverTurmaDoSistema = new javax.swing.JButton();
         RelatorioDisciplina = new javax.swing.JPanel();
-        TabelaDisc = new javax.swing.JScrollPane();
-        TabelaDisciplinas = new javax.swing.JTable();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jLabel52 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
         RelatorioAluno = new javax.swing.JPanel();
-        TabelaDoc2 = new javax.swing.JScrollPane();
-        TabelaDocentes2 = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
         RelatorioDocente = new javax.swing.JPanel();
-        TabelaDoc = new javax.swing.JScrollPane();
-        TabelaDocentes = new javax.swing.JTable();
         RelatorioTurma = new javax.swing.JPanel();
         TabelaDoc1 = new javax.swing.JScrollPane();
         TabelaDocentes1 = new javax.swing.JTable();
         jComboBox5 = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
         BotaoSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         TelaEstudante = new javax.swing.JPanel();
@@ -1021,25 +1013,15 @@ public class Tela extends javax.swing.JFrame {
             }
         });
         CadastrarDisciplina.add(BotaoConcluirCadastroDisciplinas);
-        BotaoConcluirCadastroDisciplinas.setBounds(220, 420, 90, 30);
+        BotaoConcluirCadastroDisciplinas.setBounds(30, 420, 90, 30);
 
         ListaDeAlunos.setViewportView(ListaAlunosCadastrarDisciplinas);
 
         CadastrarDisciplina.add(ListaDeAlunos);
         ListaDeAlunos.setBounds(30, 130, 224, 280);
 
-        jScrollPane2.setViewportView(listadeprofessores);
-
-        CadastrarDisciplina.add(jScrollPane2);
-        jScrollPane2.setBounds(270, 130, 258, 280);
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel23.setText("Professores Disponíveis");
-        CadastrarDisciplina.add(jLabel23);
-        jLabel23.setBounds(275, 103, 150, 20);
-
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel24.setText("Alunos Disponíveis");
+        jLabel24.setText("Disciplinas Existentes");
         CadastrarDisciplina.add(jLabel24);
         jLabel24.setBounds(29, 103, 130, 20);
 
@@ -1075,10 +1057,10 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel11.setText("Data de Nascimento");
 
-        BotaoConcluirCadastro.setText("Cadastrar");
-        BotaoConcluirCadastro.addActionListener(new java.awt.event.ActionListener() {
+        BotaoConcluirCadastroAluno.setText("Cadastrar");
+        BotaoConcluirCadastroAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoConcluirCadastroActionPerformed(evt);
+                BotaoConcluirCadastroAlunoActionPerformed(evt);
             }
         });
 
@@ -1135,7 +1117,7 @@ public class Tela extends javax.swing.JFrame {
                             .addComponent(TabelaDocumentosAnexados, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(50, 50, 50)))
                     .addGroup(CadastrarAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(BotaoConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoConcluirCadastroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(BotaoProcurarDocumentacao))))
         );
         CadastrarAlunoLayout.setVerticalGroup(
@@ -1174,7 +1156,7 @@ public class Tela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotaoProcurarDocumentacao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotaoConcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoConcluirCadastroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
 
@@ -1210,10 +1192,10 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel33.setText("Data de Nascimento");
 
-        BotaoConcluirCadastro1.setText("Cadastrar");
-        BotaoConcluirCadastro1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoConcluirCadastroDocente.setText("Cadastrar");
+        BotaoConcluirCadastroDocente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoConcluirCadastro1ActionPerformed(evt);
+                BotaoConcluirCadastroDocenteActionPerformed(evt);
             }
         });
 
@@ -1263,7 +1245,7 @@ public class Tela extends javax.swing.JFrame {
                             .addComponent(EnderecoFotoDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(55, 55, 55))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarDocenteLayout.createSequentialGroup()
-                        .addComponent(BotaoConcluirCadastro1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoConcluirCadastroDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarDocenteLayout.createSequentialGroup()
                         .addGroup(CadastrarDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1312,7 +1294,7 @@ public class Tela extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BotaoProcurarDocumentacao1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BotaoConcluirCadastro1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotaoConcluirCadastroDocente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
 
@@ -1340,9 +1322,14 @@ public class Tela extends javax.swing.JFrame {
         CadastrarTurma.add(jLabel12);
         jLabel12.setBounds(20, 130, 160, 20);
 
-        jButton3.setText("Cadastrar");
-        CadastrarTurma.add(jButton3);
-        jButton3.setBounds(90, 420, 80, 23);
+        BotaoConcluirCadastroTurma.setText("Cadastrar");
+        BotaoConcluirCadastroTurma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoConcluirCadastroTurmaActionPerformed(evt);
+            }
+        });
+        CadastrarTurma.add(BotaoConcluirCadastroTurma);
+        BotaoConcluirCadastroTurma.setBounds(90, 420, 100, 23);
 
         MiniTelas.add(CadastrarTurma);
         CadastrarTurma.setBounds(-1, -1, 590, 470);
@@ -1605,7 +1592,7 @@ public class Tela extends javax.swing.JFrame {
         RemoverDisciplina.setMaximumSize(new java.awt.Dimension(590, 470));
         RemoverDisciplina.setPreferredSize(new java.awt.Dimension(590, 470));
 
-        TabelaEditarDisciplinas1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaRemoverDisciplinas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1613,9 +1600,14 @@ public class Tela extends javax.swing.JFrame {
                 "Disciplinas "
             }
         ));
-        TabelaDisc2.setViewportView(TabelaEditarDisciplinas1);
+        TabelaDisc2.setViewportView(TabelaRemoverDisciplinas);
 
-        jButton11.setText("Remover");
+        BotãoRemoverDisciplinasDoSistema.setText("Remover");
+        BotãoRemoverDisciplinasDoSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotãoRemoverDisciplinasDoSistemaActionPerformed(evt);
+            }
+        });
 
         jLabel80.setText("Para remover uma disciplina, selecione-a(as).");
 
@@ -1626,7 +1618,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(RemoverDisciplinaLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(RemoverDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton11)
+                    .addComponent(BotãoRemoverDisciplinasDoSistema)
                     .addComponent(TabelaDisc2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(255, Short.MAX_VALUE))
@@ -1639,7 +1631,7 @@ public class Tela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel80)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton11)
+                .addComponent(BotãoRemoverDisciplinasDoSistema)
                 .addContainerGap())
         );
 
@@ -1650,25 +1642,22 @@ public class Tela extends javax.swing.JFrame {
         RemoverAluno.setMaximumSize(new java.awt.Dimension(590, 470));
         RemoverAluno.setMinimumSize(new java.awt.Dimension(590, 470));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaRemoverAlunos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Alunos"
             }
         ));
-        jScrollPane6.setViewportView(jTable4);
+        jScrollPane6.setViewportView(TabelaRemoverAlunos);
 
         jLabel75.setText("Para remover um aluno, selecione.");
 
-        jButton12.setText("Remover");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        BotãoRemoverAlunoDoSistema.setText("Remover");
+        BotãoRemoverAlunoDoSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                BotãoRemoverAlunoDoSistemaActionPerformed(evt);
             }
         });
 
@@ -1679,7 +1668,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(RemoverAlunoLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(RemoverAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton12)
+                    .addComponent(BotãoRemoverAlunoDoSistema)
                     .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(264, Short.MAX_VALUE))
@@ -1692,7 +1681,7 @@ public class Tela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel75)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton12)
+                .addComponent(BotãoRemoverAlunoDoSistema)
                 .addGap(90, 90, 90))
         );
 
@@ -1703,25 +1692,22 @@ public class Tela extends javax.swing.JFrame {
         RemoverDocente.setMaximumSize(new java.awt.Dimension(590, 470));
         RemoverDocente.setMinimumSize(new java.awt.Dimension(590, 470));
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaRemoverDocentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Docentes "
             }
         ));
-        jScrollPane7.setViewportView(jTable5);
+        jScrollPane7.setViewportView(TabelaRemoverDocentes);
 
         jLabel76.setText("Para remover um docente, selecione.");
 
-        jButton13.setText("Remover");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        BotãoRemoverDocentesDoSistema.setText("Remover");
+        BotãoRemoverDocentesDoSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                BotãoRemoverDocentesDoSistemaActionPerformed(evt);
             }
         });
 
@@ -1732,7 +1718,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(RemoverDocenteLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(RemoverDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton13)
+                    .addComponent(BotãoRemoverDocentesDoSistema)
                     .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(264, Short.MAX_VALUE))
@@ -1745,7 +1731,7 @@ public class Tela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel76)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton13)
+                .addComponent(BotãoRemoverDocentesDoSistema)
                 .addGap(90, 90, 90))
         );
 
@@ -1756,25 +1742,22 @@ public class Tela extends javax.swing.JFrame {
         RemoverTurma.setMaximumSize(new java.awt.Dimension(590, 470));
         RemoverTurma.setMinimumSize(new java.awt.Dimension(590, 470));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaRemoverTurmas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Turmas"
             }
         ));
-        jScrollPane4.setViewportView(jTable3);
+        jScrollPane4.setViewportView(TabelaRemoverTurmas);
 
         jLabel74.setText("Para remover uma turma, selecione-a e aperte del.");
 
-        jButton10.setText("Remover");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        BotãoRemoverTurmaDoSistema.setText("Remover");
+        BotãoRemoverTurmaDoSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                BotãoRemoverTurmaDoSistemaActionPerformed(evt);
             }
         });
 
@@ -1785,7 +1768,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(RemoverTurmaLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(RemoverTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton10)
+                    .addComponent(BotãoRemoverTurmaDoSistema)
                     .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(264, Short.MAX_VALUE))
@@ -1798,7 +1781,7 @@ public class Tela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel74)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
+                .addComponent(BotãoRemoverTurmaDoSistema)
                 .addGap(90, 90, 90))
         );
 
@@ -1809,40 +1792,23 @@ public class Tela extends javax.swing.JFrame {
         RelatorioDisciplina.setMaximumSize(new java.awt.Dimension(590, 470));
         RelatorioDisciplina.setPreferredSize(new java.awt.Dimension(590, 470));
 
-        TabelaDisciplinas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Docentes", "Alunos"
-            }
-        ));
-        TabelaDisc.setViewportView(TabelaDisciplinas);
-
-        jLabel52.setText("Disciplinas");
+        jButton9.setText("jButton9");
 
         javax.swing.GroupLayout RelatorioDisciplinaLayout = new javax.swing.GroupLayout(RelatorioDisciplina);
         RelatorioDisciplina.setLayout(RelatorioDisciplinaLayout);
         RelatorioDisciplinaLayout.setHorizontalGroup(
             RelatorioDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RelatorioDisciplinaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(RelatorioDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel52)
-                    .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16))
+                .addGap(224, 224, 224)
+                .addComponent(jButton9)
+                .addContainerGap(291, Short.MAX_VALUE))
         );
         RelatorioDisciplinaLayout.setVerticalGroup(
             RelatorioDisciplinaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RelatorioDisciplinaLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel52)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(TabelaDisc, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(166, 166, 166)
+                .addComponent(jButton9)
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         MiniTelas.add(RelatorioDisciplina);
@@ -1852,40 +1818,15 @@ public class Tela extends javax.swing.JFrame {
         RelatorioAluno.setMaximumSize(new java.awt.Dimension(590, 470));
         RelatorioAluno.setMinimumSize(new java.awt.Dimension(590, 470));
 
-        TabelaDocentes2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Aluno", "Nota", "Situação "
-            }
-        ));
-        TabelaDoc2.setViewportView(TabelaDocentes2);
-
-        jLabel13.setText("Disciplinas:");
-
         javax.swing.GroupLayout RelatorioAlunoLayout = new javax.swing.GroupLayout(RelatorioAluno);
         RelatorioAluno.setLayout(RelatorioAlunoLayout);
         RelatorioAlunoLayout.setHorizontalGroup(
             RelatorioAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RelatorioAlunoLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(RelatorioAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TabelaDoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+            .addGap(0, 590, Short.MAX_VALUE)
         );
         RelatorioAlunoLayout.setVerticalGroup(
             RelatorioAlunoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RelatorioAlunoLayout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(TabelaDoc2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
         MiniTelas.add(RelatorioAluno);
@@ -1895,31 +1836,15 @@ public class Tela extends javax.swing.JFrame {
         RelatorioDocente.setMaximumSize(new java.awt.Dimension(590, 470));
         RelatorioDocente.setMinimumSize(new java.awt.Dimension(590, 470));
 
-        TabelaDocentes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Docente", "Disciplina ", "Turma"
-            }
-        ));
-        TabelaDoc.setViewportView(TabelaDocentes);
-
         javax.swing.GroupLayout RelatorioDocenteLayout = new javax.swing.GroupLayout(RelatorioDocente);
         RelatorioDocente.setLayout(RelatorioDocenteLayout);
         RelatorioDocenteLayout.setHorizontalGroup(
             RelatorioDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RelatorioDocenteLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(TabelaDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+            .addGap(0, 590, Short.MAX_VALUE)
         );
         RelatorioDocenteLayout.setVerticalGroup(
             RelatorioDocenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RelatorioDocenteLayout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
-                .addComponent(TabelaDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+            .addGap(0, 470, Short.MAX_VALUE)
         );
 
         MiniTelas.add(RelatorioDocente);
@@ -1941,16 +1866,23 @@ public class Tela extends javax.swing.JFrame {
 
         jLabel51.setText("Turmas:");
 
+        jButton14.setText("Gerar Relatório");
+
         javax.swing.GroupLayout RelatorioTurmaLayout = new javax.swing.GroupLayout(RelatorioTurma);
         RelatorioTurma.setLayout(RelatorioTurmaLayout);
         RelatorioTurmaLayout.setHorizontalGroup(
             RelatorioTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RelatorioTurmaLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(RelatorioTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel51)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TabelaDoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RelatorioTurmaLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(RelatorioTurmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel51)
+                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TabelaDoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(RelatorioTurmaLayout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(jButton14)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         RelatorioTurmaLayout.setVerticalGroup(
@@ -1961,8 +1893,10 @@ public class Tela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(TabelaDoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addComponent(TabelaDoc1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton14)
+                .addGap(37, 37, 37))
         );
 
         MiniTelas.add(RelatorioTurma);
@@ -2316,7 +2250,7 @@ public class Tela extends javax.swing.JFrame {
         loginUsuario.setForeground(new java.awt.Color(0, 0, 0));
 
     }//GEN-LAST:event_ClickMouseUsuario
-    
+
     private void ClickMouseSenha(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickMouseSenha
         loginSenha.setText(null);
         loginSenha.setFont(new java.awt.Font("Arial Unicode MS", 2, 12)); // NOI18N
@@ -2353,25 +2287,25 @@ public class Tela extends javax.swing.JFrame {
         CadastrarDocente.setVisible(false);
         CadastrarTurma.setVisible(false);
         CadastrarDisciplina.setVisible(false);
-        
+
         RelatorioDocente.setVisible(false);
         RelatorioDisciplina.setVisible(false);
         RelatorioAluno.setVisible(false);
         RelatorioTurma.setVisible(false);
-        
+
         EditarDisciplina.setVisible(false);
         EditarAluno.setVisible(false);
         EditarDocente.setVisible(false);
-        EditarTurma.setVisible(false);        
-         
-        RemoverDisciplina.setVisible(false); 
-        RemoverAluno.setVisible(false); 
-        RemoverDocente.setVisible(false);         
-        RemoverTurma.setVisible(false); 
-                
+        EditarTurma.setVisible(false);
+
+        RemoverDisciplina.setVisible(false);
+        RemoverAluno.setVisible(false);
+        RemoverDocente.setVisible(false);
+        RemoverTurma.setVisible(false);
+
         MiniTelaDadosPessoais.setVisible(false);
         MiniTelaBoletim.setVisible(false);
-     
+
     }
 
     private void LimparCaixasDeTextos() {
@@ -2394,14 +2328,16 @@ public class Tela extends javax.swing.JFrame {
         CaixaDeTextoCadastroTurma.setText(null);
         CaixaDeTextoDisciplina.setText(null);
 
-    } public void LimparSubmenus(){
-     SubmenuRemocao.setVisible(false);
-     SubmenuCadastro.setVisible(false);
-     SubmenuRelatorio.setVisible(false);
-     SubmenuEdicao.setVisible(false);
-    
+    }
+
+    public void LimparSubmenus() {
+        SubmenuRemocao.setVisible(false);
+        SubmenuCadastro.setVisible(false);
+        SubmenuRelatorio.setVisible(false);
+        SubmenuEdicao.setVisible(false);
+
         PainelMenu.setVisible(true);
-        
+
     }
 
     private void BotaoSairTelaLogin(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairTelaLogin
@@ -2453,7 +2389,7 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoProcurarDocumentacaoActionPerformed
     }
 
-    private void BotaoConcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroActionPerformed
+    private void BotaoConcluirCadastroAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroAlunoActionPerformed
         String nome = CaixaDeTextoCadastroNomeAluno.getText();
         String data = CaixaDeTextoCadastroDataNascAluno.getText();
 
@@ -2466,18 +2402,19 @@ public class Tela extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(null, "Cadastro realizado");
         nomesdealunos = CaixaDeTextoCadastroNomeAluno.getText();
-        for (int i = 0; i < nomesAlunos.length; i++) {
+        /*for (int i = 0; i < nomesAlunos.length; i++) {
 
             if (nomesAlunos[i] == null) {
                 nomesAlunos[i] = nomesdealunos;
                 ListaAlunosCadastrarDisciplinas.setListData(nomesAlunos);
                 ListaAlunosCadastrarTurma.setListData(nomesAlunos);
-                
                 break;
             }
-        }
-
-    }//GEN-LAST:event_BotaoConcluirCadastroActionPerformed
+        }*/
+        DefaultTableModel dtmExcluirAlunos = (DefaultTableModel) TabelaRemoverAlunos.getModel();
+        Object[] alunosparadeletar = {CaixaDeTextoCadastroNomeAluno.getText()};
+        dtmExcluirAlunos.addRow(alunosparadeletar);
+    }//GEN-LAST:event_BotaoConcluirCadastroAlunoActionPerformed
 
     private void BotaoProcurarImagem3x4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarImagem3x4ActionPerformed
         JFileChooser arquivofoto = new JFileChooser();
@@ -2504,7 +2441,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void ClickNoBotaoCadastrarTurmas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoCadastrarTurmas
         LimparMiniTela();
-        
+
         CadastrarTurma.setVisible(true);
 
         LimparTabelaDisciplinas();
@@ -2514,7 +2451,7 @@ public class Tela extends javax.swing.JFrame {
         LimparMiniTela();
         LimparCaixasDeTextos();
         LimparTabelaDisciplinas();
-        CadastrarDocente.setVisible(true);      
+        CadastrarDocente.setVisible(true);
     }//GEN-LAST:event_ClickBotaoCadastrarDocentes
 
     private void DeslizarMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeslizarMenuMouseClicked
@@ -2569,56 +2506,67 @@ public class Tela extends javax.swing.JFrame {
     }
 
     private void BotaoConcluirCadastroDisciplinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroDisciplinasActionPerformed
-        JOptionPane.showMessageDialog(null, "Cadastro realizado");
-        CaixaDeTextoDisciplina.setText(null);    
-        System.out.println(ListaAlunosCadastrarDisciplinas.getSelectedValuesList());
-        
 
+        for (int i = 0; i < nomesDisciplinas.length; i++) {
+
+            if (nomesDisciplinas[i] == null) {
+                nomesDisciplinas[i] = CaixaDeTextoDisciplina.getText();
+                ListaAlunosCadastrarDisciplinas.setListData(nomesDisciplinas);
+                
+                JOptionPane.showMessageDialog(null, "Cadastro realizado");
+
+                DefaultTableModel dtmExcluirDisciplinas = (DefaultTableModel) TabelaRemoverDisciplinas.getModel();
+                Object[] disciplinasParaDeletar = {CaixaDeTextoDisciplina.getText()};
+                dtmExcluirDisciplinas.addRow(disciplinasParaDeletar);
+
+                CaixaDeTextoDisciplina.setText(null);
+                break;
+            }
+            if (nomesDisciplinas[i] != null && nomesDisciplinas[i].equals(CaixaDeTextoDisciplina.getText())) {
+                JOptionPane.showMessageDialog(null, "Já existe uma disciplina com este nome");
+                break;
+            }
+            //System.out.println(ListaAlunosCadastrarDisciplinas.getSelectedValuesList());
     }//GEN-LAST:event_BotaoConcluirCadastroDisciplinasActionPerformed
-
+    }
     private void ClickNoBotaoMenuCadastro(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoMenuCadastro
-        
+
         LimparSubmenus();
-        PainelMenu.setVisible(false); 
+        PainelMenu.setVisible(false);
         SubmenuCadastro.setVisible(true);
     }//GEN-LAST:event_ClickNoBotaoMenuCadastro
 
     private void ClickBotaoMenuEditar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoMenuEditar
         LimparSubmenus();
-        PainelMenu.setVisible(false);     
-      SubmenuEdicao.setVisible(true);
+        PainelMenu.setVisible(false);
+        SubmenuEdicao.setVisible(true);
     }//GEN-LAST:event_ClickBotaoMenuEditar
 
     private void ClickBotaoMenuRemover(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoMenuRemover
         LimparSubmenus();
         PainelMenu.setVisible(false);
-       SubmenuRemocao.setVisible(true);
+        SubmenuRemocao.setVisible(true);
     }//GEN-LAST:event_ClickBotaoMenuRemover
 
     private void BotaoCadastrarDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoCadastrarDisciplinasMouseClicked
         LimparMiniTela();
         LimparCaixasDeTextos();
         CadastrarDisciplina.setVisible(true);
-       
+
     }//GEN-LAST:event_BotaoCadastrarDisciplinasMouseClicked
 
     private void BotaoProcurarImagem3x5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarImagem3x5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotaoProcurarImagem3x5ActionPerformed
 
-    private void BotaoConcluirCadastro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastro1ActionPerformed
+    private void BotaoConcluirCadastroDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroDocenteActionPerformed
 
-        nomesDeDocentes = CaixaDeTextoCadastroNomeDocente.getText();
-        for (int i = 0; i < nomesAlunos.length; i++) {
-
-            if (nomesDocentes[i] == null) {
-                nomesDocentes[i] = nomesDeDocentes;
-                listadeprofessores.setListData(nomesDocentes);
-                break;
-            }
-        }
         JOptionPane.showMessageDialog(null, "Cadastro realizado");
-    }//GEN-LAST:event_BotaoConcluirCadastro1ActionPerformed
+DefaultTableModel dtmExcluirDocentes = (DefaultTableModel) TabelaRemoverDocentes.getModel();
+                Object[] turmasParaDeletar = {CaixaDeTextoCadastroNomeDocente.getText()};
+                dtmExcluirDocentes.addRow(turmasParaDeletar);
+
+    }//GEN-LAST:event_BotaoConcluirCadastroDocenteActionPerformed
 
     private void BotaoProcurarDocumentacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoProcurarDocumentacao1ActionPerformed
         // TODO add your handling code here:
@@ -2630,63 +2578,63 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_ClickNoBotaoEditarTurmas
 
     private void ClickBotaoEditarDocentes(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoEditarDocentes
-       LimparMiniTela();
-       EditarDocente.setVisible(true);
+        LimparMiniTela();
+        EditarDocente.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoEditarDocentes
 
     private void ClickBotaoEditarAluno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoEditarAluno
         LimparMiniTela();
-EditarAluno.setVisible(true);// TODO add your handling code here:
+        EditarAluno.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoEditarAluno
 
     private void BotaoEditarDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoEditarDisciplinasMouseClicked
         LimparMiniTela();
-EditarDisciplina.setVisible(true);// TODO add your handling code here:
+        EditarDisciplina.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_BotaoEditarDisciplinasMouseClicked
 
     private void ClickNoBotaoRemoverTurmas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoRemoverTurmas
         LimparMiniTela();
-RemoverTurma.setVisible(true);// TODO add your handling code here:
+        RemoverTurma.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickNoBotaoRemoverTurmas
 
     private void ClickBotaoRemoverAluno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoRemoverAluno
         LimparMiniTela();
-RemoverAluno.setVisible(true);// TODO add your handling code here:
+        RemoverAluno.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoRemoverAluno
 
     private void BotaoRemoverDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoRemoverDisciplinasMouseClicked
         LimparMiniTela();
-RemoverDisciplina.setVisible(true);// TODO add your handling code here:
+        RemoverDisciplina.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_BotaoRemoverDisciplinasMouseClicked
 
     private void ClickBotaoRemoverDocentes(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoRemoverDocentes
         LimparMiniTela();
-RemoverDocente.setVisible(true);// TODO add your handling code here:
+        RemoverDocente.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoRemoverDocentes
 
     private void ClickNoBotaoRelatorioTurmas(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickNoBotaoRelatorioTurmas
-       LimparMiniTela();
-       RelatorioTurma.setVisible(true);// TODO add your handling code here:
+        LimparMiniTela();
+        RelatorioTurma.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickNoBotaoRelatorioTurmas
 
     private void ClickBotaoRelatorioDocentes(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoRelatorioDocentes
         LimparMiniTela();
-RelatorioDocente.setVisible(true);// TODO add your handling code here:
+        RelatorioDocente.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoRelatorioDocentes
 
     private void ClickBotaoRelatorioAluno(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoRelatorioAluno
         LimparMiniTela();
-RelatorioAluno.setVisible(true);// TODO add your handling code here:
+        RelatorioAluno.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_ClickBotaoRelatorioAluno
 
     private void BotaoRelatorioDisciplinasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoRelatorioDisciplinasMouseClicked
         LimparMiniTela();
-RelatorioDisciplina.setVisible(true);
+        RelatorioDisciplina.setVisible(true);
     }//GEN-LAST:event_BotaoRelatorioDisciplinasMouseClicked
 
     private void BotãoRetornarMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotãoRetornarMenuMouseClicked
-       LimparSubmenus();
+        LimparSubmenus();
     }//GEN-LAST:event_BotãoRetornarMenuMouseClicked
 
     private void ImagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ImagemMouseClicked
@@ -2696,33 +2644,109 @@ RelatorioDisciplina.setVisible(true);
         if (loginSenha.getText() == null) {
             loginSenha.setText("Senha");
     }//GEN-LAST:event_ImagemMouseClicked
-}
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }
+    private void BotãoRemoverTurmaDoSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotãoRemoverTurmaDoSistemaActionPerformed
+
+        DefaultTableModel dtmExcluirTurmas = (DefaultTableModel) TabelaRemoverTurmas.getModel();
+
+        if (TabelaRemoverTurmas.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione pelo menos um para poder excluir.");
+        }
+        if (TabelaRemoverTurmas.getSelectedRow() != -1) {
+            dtmExcluirTurmas.removeRow(TabelaRemoverTurmas.getSelectedRow());
+        }
+
+        if (dtmExcluirTurmas.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Não contém turmas para excluir.");
+        }
+    }//GEN-LAST:event_BotãoRemoverTurmaDoSistemaActionPerformed
 
     private void ClickBotaoMenuRelatorio(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClickBotaoMenuRelatorio
-         LimparSubmenus();
+        LimparSubmenus();
         PainelMenu.setVisible(false);
         SubmenuRelatorio.setVisible(true);
     }//GEN-LAST:event_ClickBotaoMenuRelatorio
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    private void BotãoRemoverAlunoDoSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotãoRemoverAlunoDoSistemaActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+        DefaultTableModel dtmExcluirAlunos = (DefaultTableModel) TabelaRemoverAlunos.getModel();
+
+        if (TabelaRemoverAlunos.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione pelo menos um para poder excluir.");
+        }
+        if (TabelaRemoverAlunos.getSelectedRow() != -1) {
+            dtmExcluirAlunos.removeRow(TabelaRemoverAlunos.getSelectedRow());
+    }//GEN-LAST:event_BotãoRemoverAlunoDoSistemaActionPerformed
+
+        if (dtmExcluirAlunos.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Não contém alunos para excluir.");
+        }
+    }
+    private void BotãoRemoverDocentesDoSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotãoRemoverDocentesDoSistemaActionPerformed
+
+        DefaultTableModel dtmExcluirDocentes = (DefaultTableModel) TabelaRemoverDocentes.getModel();
+
+        if (TabelaRemoverDocentes.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione pelo menos um para poder excluir.");
+        }
+        if (TabelaRemoverDocentes.getSelectedRow() != -1) {
+            dtmExcluirDocentes.removeRow(TabelaRemoverDocentes.getSelectedRow());
+        }
+
+        if (dtmExcluirDocentes.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Não contém docentes para excluir.");
+        }
+    }//GEN-LAST:event_BotãoRemoverDocentesDoSistemaActionPerformed
+
+    private void BotãoRemoverDisciplinasDoSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotãoRemoverDisciplinasDoSistemaActionPerformed
+
+        DefaultTableModel dtmExcluirDiciplinas = (DefaultTableModel) TabelaRemoverDisciplinas.getModel();
+
+        if (TabelaRemoverDisciplinas.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Selecione pelo menos um para poder excluir.");
+        }
+        if (TabelaRemoverDisciplinas.getSelectedRow() != -1) {
+            dtmExcluirDiciplinas.removeRow(TabelaRemoverDisciplinas.getSelectedRow());
+        }
+        if (dtmExcluirDiciplinas.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Não contém disciplinas para excluir.");
+        }
+    }//GEN-LAST:event_BotãoRemoverDisciplinasDoSistemaActionPerformed
+
+    private void BotaoConcluirCadastroTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConcluirCadastroTurmaActionPerformed
+        CaixaDeTextoCadastroTurma.getText();
+
+        for (int i = 0; i < nomesTurmas.length; i++) {
+
+            if (nomesTurmas[i] == null) {
+                nomesTurmas[i] = CaixaDeTextoCadastroTurma.getText();
+                ListaAlunosCadastrarTurma.setListData(nomesTurmas);
+                
+
+                DefaultTableModel dtmExcluirTurmas = (DefaultTableModel) TabelaRemoverTurmas.getModel();
+                Object[] turmasParaDeletar = {CaixaDeTextoCadastroTurma.getText()};
+                dtmExcluirTurmas.addRow(turmasParaDeletar);
+CaixaDeTextoCadastroTurma.setText(null);
+                JOptionPane.showMessageDialog(null, "Cadastro realizado");
+                break;
+            }
+            if (nomesTurmas[i] != null && nomesTurmas[i].equals(CaixaDeTextoCadastroTurma.getText())) {
+                JOptionPane.showMessageDialog(null, "Já existe uma disciplina com este nome");
+                break;
+            }
+            //System.out.println(ListaAlunosCadastrarDisciplinas.getSelectedValuesList());
+        }
+
+    }//GEN-LAST:event_BotaoConcluirCadastroTurmaActionPerformed
 
     public void LimparTabelaDisciplinas() {
-       
+        /*  
         if (((DefaultTableModel) TabelaDisciplinas.getModel()).getRowCount() > 0) {
             for (int i = 0; i < TabelaDisciplinas.getRowCount(); i++) {
                 ((DefaultTableModel) TabelaDisciplinas.getModel()).removeRow(i);
             }
 
-        }
+        }*/
     }
 
     public static void main(String args[]) {
@@ -2764,9 +2788,10 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JPanel BotaoCadastrarDisciplinas;
     private javax.swing.JPanel BotaoCadastrarDocentes;
     private javax.swing.JPanel BotaoCadastrarTurmas;
-    private javax.swing.JButton BotaoConcluirCadastro;
-    private javax.swing.JButton BotaoConcluirCadastro1;
+    private javax.swing.JButton BotaoConcluirCadastroAluno;
     private javax.swing.JButton BotaoConcluirCadastroDisciplinas;
+    private javax.swing.JButton BotaoConcluirCadastroDocente;
+    private javax.swing.JButton BotaoConcluirCadastroTurma;
     private javax.swing.JPanel BotaoDadosPessoais;
     private javax.swing.JPanel BotaoEditarAluno;
     private javax.swing.JPanel BotaoEditarDisciplinas;
@@ -2790,6 +2815,10 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JPanel BotaoRemoverTurmas;
     private javax.swing.JButton BotaoSair;
     private javax.swing.JButton BotaoSair1;
+    private javax.swing.JButton BotãoRemoverAlunoDoSistema;
+    private javax.swing.JButton BotãoRemoverDisciplinasDoSistema;
+    private javax.swing.JButton BotãoRemoverDocentesDoSistema;
+    private javax.swing.JButton BotãoRemoverTurmaDoSistema;
     private javax.swing.JLabel BotãoRetornarMenu;
     private javax.swing.JPanel CadastrarAluno;
     private javax.swing.JPanel CadastrarDisciplina;
@@ -2848,43 +2877,35 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JPanel SubmenuEdicao;
     private javax.swing.JPanel SubmenuRelatorio;
     private javax.swing.JPanel SubmenuRemocao;
-    private javax.swing.JScrollPane TabelaDisc;
     private javax.swing.JScrollPane TabelaDisc1;
     private javax.swing.JScrollPane TabelaDisc2;
-    private javax.swing.JTable TabelaDisciplinas;
-    private javax.swing.JScrollPane TabelaDoc;
     private javax.swing.JScrollPane TabelaDoc1;
-    private javax.swing.JScrollPane TabelaDoc2;
-    private javax.swing.JTable TabelaDocentes;
     private javax.swing.JTable TabelaDocentes1;
-    private javax.swing.JTable TabelaDocentes2;
     private javax.swing.JScrollPane TabelaDocumentosAnexados;
     private javax.swing.JScrollPane TabelaDocumentosAnexados1;
     private javax.swing.JTable TabelaEditarDisciplinas;
-    private javax.swing.JTable TabelaEditarDisciplinas1;
+    private javax.swing.JTable TabelaRemoverAlunos;
+    private javax.swing.JTable TabelaRemoverDisciplinas;
+    private javax.swing.JTable TabelaRemoverDocentes;
+    private javax.swing.JTable TabelaRemoverTurmas;
     private javax.swing.JPanel TelaDocente;
     private javax.swing.JPanel TelaEstudante;
     private javax.swing.JPanel TelaLogin;
     private javax.swing.JLabel Título;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JComboBox<String> jComboBox8;
     private javax.swing.JComboBox<String> jComboBox9;
@@ -2892,7 +2913,6 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -2903,7 +2923,6 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -2931,7 +2950,6 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
@@ -2961,7 +2979,6 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -2969,14 +2986,10 @@ RelatorioDisciplina.setVisible(true);
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JList<String> listadeprofessores;
     private javax.swing.JTextField loginSenha;
     private javax.swing.JTextField loginUsuario;
     // End of variables declaration//GEN-END:variables
